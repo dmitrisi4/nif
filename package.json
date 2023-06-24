@@ -1,0 +1,20 @@
+{
+  "name": "nif",
+  "version": "1.0.0",
+  "source": "src/index.html",
+  "description": "",
+  "scripts": {
+    "start": "parcel",
+    "build": "parcel build src/index.html --public-url ./"
+  },
+  "author": "kardsich",
+  "license": "ISC",
+  "devDependencies": {
+    "parcel": "^2.8.3"
+  },
+  "dependencies": {
+    "autoprefixer": "^10.4.14",
+    "postcss": "^8.4.23",
+    "tailwindcss": "^3.3.2"
+  }
+}
