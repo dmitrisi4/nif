@@ -59,7 +59,7 @@ if (document) {
 			const mainMenu = document.querySelector('.main-menu');
 			const langBtn = document.querySelector('.lang-btn');
 			const langMenu = document.querySelector('.lang-menu');
-			const langComp = document.querySelector('.lang-comp');id="reg-form-btn"
+			const langComp = document.querySelector('.lang-comp');
 			const modalReg = document.querySelector('.modal-reg');
 			const modalWrapper = document.querySelector('.modal-wrapper');
 			const modaCloseBtnlReg = document.querySelector('.close-reg-form');

@@ -259,7 +259,7 @@ document.addEventListener('DOMContentLoaded', function () {
 			selectCounties.appendChild(el);
 		}
 
-	var element = selectCounties;
+	const element = selectCounties;
 	const choise = new Choices(element, {
 		allowHTML: true,
 		placeholderValue: 'This is a placeholder set in the config',
