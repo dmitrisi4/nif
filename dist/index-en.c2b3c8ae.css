@@ -503,6 +503,10 @@ img, video {
   margin-top: 39px;
 }
 
+.mt-\[40px\] {
+  margin-top: 40px;
+}
+
 .mt-\[50px\] {
   margin-top: 50px;
 }
@@ -772,8 +776,18 @@ img, video {
   transform: translate(var(--tw-translate-x), var(--tw-translate-y)) rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y));
 }
 
+.scale-x-\[-1\] {
+  --tw-scale-x: -1;
+  transform: translate(var(--tw-translate-x), var(--tw-translate-y)) rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y));
+}
+
 .scale-y-0 {
   --tw-scale-y: 0;
+  transform: translate(var(--tw-translate-x), var(--tw-translate-y)) rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y));
+}
+
+.scale-y-\[1\] {
+  --tw-scale-y: 1;
   transform: translate(var(--tw-translate-x), var(--tw-translate-y)) rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y));
 }
 
@@ -1060,6 +1074,10 @@ img, video {
 
 .pb-\[36px\] {
   padding-bottom: 36px;
+}
+
+.pb-\[45px\] {
+  padding-bottom: 45px;
 }
 
 .pb-\[50px\] {
@@ -1520,7 +1538,7 @@ html, body {
   left: 50%;
 }
 
-.modal-reg {
+.modal-reg-bg {
   -webkit-backdrop-filter: blur(10px);
   backdrop-filter: blur(10px);
   background: #b7fa00cc;
@@ -2159,6 +2177,10 @@ html, body {
     top: -2.5rem;
   }
 
+  .md\:top-\[20\%\] {
+    top: 20%;
+  }
+
   .md\:top-\[6\%\] {
     top: 6%;
   }
@@ -2195,12 +2217,20 @@ html, body {
     margin-top: 26px;
   }
 
+  .md\:mt-\[30px\] {
+    margin-top: 30px;
+  }
+
   .md\:mt-\[45px\] {
     margin-top: 45px;
   }
 
   .md\:mt-\[50px\] {
     margin-top: 50px;
+  }
+
+  .md\:mt-\[60px\] {
+    margin-top: 60px;
   }
 
   .md\:mt-\[70px\] {
@@ -2288,6 +2318,11 @@ html, body {
     padding-right: 104px;
   }
 
+  .md\:px-\[75spx\] {
+    padding-left: 75spx;
+    padding-right: 75spx;
+  }
+
   .md\:py-\[15px\] {
     padding-top: 15px;
     padding-bottom: 15px;
@@ -2295,6 +2330,10 @@ html, body {
 
   .md\:pb-\[36px\] {
     padding-bottom: 36px;
+  }
+
+  .md\:pb-\[65px\] {
+    padding-bottom: 65px;
   }
 
   .md\:pb-\[85px\] {

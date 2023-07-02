@@ -128,10 +128,12 @@ html, body {
 	@apply relative before:block before:w-[calc(100%+10px)] before:h-[4px] before:left-1/2 before:-translate-x-1/2 before:bg-lime-green before:absolute before:-bottom-1;
 }
 
-.modal-reg {
+.modal-reg-bg {
 	background: hsla(76, 100%, 49%, 0.8);
 	backdrop-filter: blur(10px);
 }
+
+
 
 .show-el {
 	opacity: 0;

@@ -69,13 +69,24 @@ if (document) {
 			const oneDayRadio = document.querySelector('#oneDay');
 			const sixDayRadio = document.querySelector('#sixDay');
 			const elevenDayRadio = document.querySelector('#elevenDay');
-
+			const modalSucces = document.querySelector('.modal-succes');
+			const closeSaccessForm = document.querySelector('.close-saccess-form');
+			const closeSaccessBtn = document.querySelector('.close-saccess-btn');
+			
 
 			//open/close modal
 			const closeRegModal = () => {
-				if (modalReg.classList.contains('scale-1')) {
-					modalReg.classList.remove('scale-1');
+				if (modalReg.classList.contains('scale-100')) {
+					modalReg.classList.remove('scale-100');
 					modalReg.classList.add('scale-0');
+					document.body.style.overflow = 'visible';
+				}
+			};
+			
+			const closeSuccessModal = () => {
+				if (modalSucces.classList.contains('scale-100')) {
+					modalSucces.classList.remove('scale-100');
+					modalSucces.classList.add('scale-0');
 					document.body.style.overflow = 'visible';
 				}
 			};
@@ -100,7 +111,7 @@ if (document) {
 							}
 							if (modalReg.classList.contains('scale-0')) {
 								modalReg.classList.remove('scale-0');
-								modalReg.classList.add('scale-1');
+								modalReg.classList.add('scale-100');
 								document.body.style.overflow = 'hidden';
 							}
 						});
@@ -110,7 +121,7 @@ if (document) {
 						event.stopPropagation();
 						if (modalReg.classList.contains('scale-0')) {
 							modalReg.classList.remove('scale-0');
-							modalReg.classList.add('scale-1');
+							modalReg.classList.add('scale-100');
 						}
 					});
 				}				
@@ -121,6 +132,14 @@ if (document) {
 				event.stopPropagation();
 				closeRegModal();
 			});
+			
+			[closeSaccessForm,closeSaccessBtn].forEach(btn => {
+				btn.addEventListener('click', function(event) {
+					event.stopPropagation();
+					closeSuccessModal();
+				});
+			});
+			
 
 		//open/close mob menu
 			const closeMobMenu = () => {
