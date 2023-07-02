@@ -1,11 +1,11 @@
 {
   "name": "nif",
   "version": "1.0.0",
-  "source": "src/index.html",
+  "source": "src/index-en.html",
   "description": "",
   "scripts": {
     "start": "parcel",
-    "build": "parcel build src/index.html --public-url ./"
+    "build": "parcel build src/index-*.html --public-url ./"
   },
   "author": "kardsich",
   "license": "ISC",
