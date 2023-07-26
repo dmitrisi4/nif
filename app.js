@@ -5,9 +5,10 @@ const authRoutes = require('./routes/auth');
 const orderRoutes = require('./routes/order');
 const contactsRoutes = require('./routes/contacts');
 const db = require('./models/index');
+const keys = require('./config/keys');
 
 var corsOptions = {
-  origin: "http://localhost:1234"
+  origin: keys.cors
 };
 
 app.use(passport.initialize());

@@ -1,3 +1,23 @@
-Node v18.17
-npm install -  for install package
-npm run server node server
+```Node v18.17```
+Для бека в корне прокта 
+```npm install``` -  for install package
+ Для фронта ```npm install```  в client/cabinet отдельно
+
+```db.config.js``` тут подкллючение к бд
+```config/keys.js``` тут ключ jwt и corsOptions
+
+сервер старутует с команды ```pm2 start index.js``` 
+локально 
+```npm run server```
+
+клиент собраный в 
+```client/dist/``` 
+кабинент в 
+```cabinet/dist```
+
+сборка кабинета и клиента ```npm run build```
+
+для локальной сборки 
+```npm run start```
+
+
