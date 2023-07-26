@@ -1,0 +1,63 @@
+.choices__inner {
+	@apply  rounded-[10px] border border-current bg-white focus-within:border-lime focus-within:outline-none
+	w-full h-[60px] md:h-[70px] px-[14px] pt-[26px] pb-[8px]
+	text-base font-caslalom font-[700] text-black placeholder:text-base 
+	focus-within:placeholder:scale-0 placeholder:origin-left	placeholder:transition-transform;
+}
+
+.choices.is-focused .choices__inner {
+	@apply !border-lime rounded-b-[10px];
+}
+
+.choices > .choices__item  {
+}
+
+.choices__item {
+	@apply text-gunmetal-gray absolute top-[24px];
+}
+
+.choices[data-type*="select-one"]:after {
+	border: 0;
+	width: 15px;
+	height: 8px;
+	background-image: url('../assets/images/icons/arrow-select.svg');
+	background-repeat: no-repeat;
+	background-size: contain;
+	right: 30px;
+}
+
+.form-radio {
+	font-size: 2rem;
+  font-weight: bold;
+  line-height: 1.1;
+  display: grid;
+  grid-template-columns: 20px auto;
+  gap: 10px;
+}
+
+.radio-btn {
+  /* Remove most all native input styles */
+	 -webkit-appearance: none;
+  appearance: none;
+  /* For iOS < 15 */
+	@apply w-[20px] h-[20px] bg-white border-dark-gray/40 border grid rounded-[50%] m-0;
+  place-content: center;
+}
+
+.radio-btn:before {
+	@apply content-[''] w-[10px] h-[10px] md:w-[6px] md:h-[6px] rounded-[50%] scale-0 bg-lime-green md:bg-white;
+  transition: 120ms transform ease-in-out;
+}
+
+.radio-btn:checked {
+	@apply bg-dark-gray md:bg-lime-green border-none;
+}
+
+.radio-btn:checked::before {
+	@apply scale-100;
+}
+
+.radio-btn:focus {
+  outline: max(1px, 0.010em) solid theme(colors.lime-green);
+  outline-offset: max(1px, 0.15em);
+}

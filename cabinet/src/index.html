@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>CurrencyFlow</title>
+	<link rel="icon" type="image/x-icon" href="./favicon.ico">
+	<link rel="stylesheet" href="styles/app.css" />
+	<link rel="stylesheet" href="/node_modules/choices.js/public/assets/styles/choices.min.css" />
+	<link rel="stylesheet" href="styles/overwriting.css" />
+	<script defer type="module" src="scripts/app.js"></script>
+	<!-- <script defer type="module" src="scripts/validation.js"></script> -->
+</head>
+<body>
+	<div class="flex flex-col h-full">
+
+		<div class="flex-[1_0_auto]">
+			<header class="pt-[13px] pb-[14px] md:py-[15px] z-50 bg-white w-full">
+				<div class="container relative">
+					<div class="flex justify-center">
+						<img class="w-[116px] h-[33px] md:min-w-[150px] md:h-[41px]" src="/src/assets/images/logo.svg" alt="currency flow logo">
+					</div>
+					<div class="absolute right-0 top-1/2 -translate-y-1/2 hidden" id="btn-exit-wrapper">
+						<button class="bg-lime-green text-base p-2 px-5 font-bold 
+						border border-transparent hover:border-black" type="button" id="btn-exit">Exit</button>
+					</div>
+				</div>
+			</header>
+
+			<main  id="nifOnline" class="">
+				<div class="container">
+					<div class="flex justify-center items-center pt-20">
+						<div class="" id="login-section">
+							<form id="form-login">
+								<div class="min-w-[300px] flex flex-col items-center">
+								<h1 class="text-3xl font-bold">Login</h1>
+									<div class="input-field relative mt-5">
+										<input class="input" type="text" id="login-email" autocomplete="email" placeholder="Email">
+										<label class="input-label" for="contact-form-name">Email</label>
+									</div>
+									<div class="input-field relative mt-5">
+										<input class="input" type="text" id="login-password" placeholder="Password">
+										<label class="input-label" for="contact-form-name">Password</label>
+									</div>
+		
+									<button class="text-lg leading-[22px] font-caslalom text-white-smoke w-full max-w-[290px] px-2
+									py-[19px] bg-black hover:scale-105 rounded-[50px] flex justify-center relative mt-[30px]" id="contact-btn">
+									<span>Login</span>
+									<div class="w-[26px] h-[26px] absolute top-1/2 -translate-y-1/2 right-[17px]">
+										<img src="./assets/images/icons/arrow-icon.svg" alt="arrow icon">
+									</div>
+								</button>
+								</div>
+							</form>
+						</div>
+						<div class="hidden flex-col w-full" id="page-section">
+							<ul class="flex gap-3">
+								<li><button id="btn-orders-page" class="bg-lime-green text-base p-2 px-5 font-bold 
+									border hover:border-black">Orders</button></li>
+								<li><button id="btn-contacts-page" class="bg-lime-green text-base p-2 px-5 font-bold 
+									border border-transparent hover:border-black">Contacts</button></li>
+							</ul>
+							<div id="contact-page">
+								<h1 class="text-lg font-bold text-center">Contacts Table</h1>
+								<div class="table-wrapper" id="table-contacts-container" class="flex"></div>
+							</div>
+							<div id="order-page">
+								<h1 class="text-lg font-bold text-center">Orders Table</h1>
+								<div class="table-wrapper" id="table-container" class="flex"></div>
+							</div>
+						</div>
+					</div>
+				</div>
+
+			</main>
+		</div>
+	
+		<footer class="pt-10 pb-5 mt-[50px] lg:pb-7">
+			<div class="container">
+			
+			</div>
+		</footer>
+		
+	</div>
+
+</body>
+</html>
