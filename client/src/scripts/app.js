@@ -49,8 +49,8 @@ if (document) {
 	let target = '.targetSelector';
 	document.querySelectorAll(target).forEach((i) => {
 			if (i) {
-					observer.observe(i);
-					observerAnimations.observe(i);
+				observer.observe(i);
+				observerAnimations.observe(i);
 			}
 	});
 

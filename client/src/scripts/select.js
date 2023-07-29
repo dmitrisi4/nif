@@ -259,12 +259,15 @@ document.addEventListener('DOMContentLoaded', function () {
 			selectCounties.appendChild(el);
 		}
 
+		
+
 	const element = selectCounties;
 	const choise = new Choices(element, {
 		allowHTML: true,
 		placeholderValue: 'This is a placeholder set in the config',
 		searchPlaceholderValue: 'This is a search placeholder',
 	});
+
 
 	choise.passedElement.element.addEventListener('hideDropdown', function(event) {
 		const choiceValue = choise.getValue(true);

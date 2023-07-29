@@ -5,7 +5,7 @@ const authRoutes = require('./routes/auth');
 const orderRoutes = require('./routes/order');
 const contactsRoutes = require('./routes/contacts');
 const db = require('./models/index');
-const keys = require('./config/keys');
+const {keys} = require('./env');
 
 var corsOptions = {
   origin: keys.cors
@@ -32,13 +32,3 @@ db.sequelize.sync()
   })
 
 module.exports = app;
-
-
-// async function connectToDatabase() {
-//   try {
-//     await sequelize.authenticate();
-//     console.log('Connection has been established successfully.');
-//   } catch (error) {
-//     console.error('Unable to connect to the database:', error);
-//   }
-// }

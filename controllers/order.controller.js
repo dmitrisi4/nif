@@ -27,7 +27,6 @@ module.exports.create = function(req, res) {
 			bodyCountry = req.body.country,
 			bodyPlan = req.body.plan
 
-
 	// Validate request
   if (!bodyName && !bodyLastName && !bodyEmail && !bodyPhoneNumber && !bodyCountry &&
 		!bodySocial && !bodyPlan) {
@@ -57,7 +56,27 @@ module.exports.create = function(req, res) {
 }
 
 module.exports.update = function(req, res) {
-
+  const id = req.params.id;
+  console.log(req.body);
+  Orders.update(req.body, {
+    where: { id: id }
+  })
+    .then(num => {
+      if (num == 1) {
+        res.send({
+          message: "Orders was updated successfully."
+        });
+      } else {
+        res.send({
+          message: `Cannot update Orders with id=${id}. Maybe Orders was not found or req.body is empty!`
+        });
+      }
+    })
+    .catch(err => {
+      res.status(500).send({
+        message: "Error updating Orders with id=" + id
+      });
+    });
 }
 
 module.exports.remove = function(req, res) {

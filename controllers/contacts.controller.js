@@ -48,7 +48,27 @@ module.exports.create = function(req, res) {
 }
 
 module.exports.update = function(req, res) {
+  const id = req.params.id;
 
+  Contacts.update(req.body, {
+    where: { id: id }
+  })
+    .then(num => {
+      if (num == 1) {
+        res.send({
+          message: "Contacts was updated successfully."
+        });
+      } else {
+        res.send({
+          message: `Cannot update Contacts with id=${id}. Maybe Contacts was not found or req.body is empty!`
+        });
+      }
+    })
+    .catch(err => {
+      res.status(500).send({
+        message: "Error updating Contacts with id=" + id
+      });
+    });
 }
 
 module.exports.remove = function(req, res) {
