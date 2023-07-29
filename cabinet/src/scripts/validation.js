@@ -2,6 +2,7 @@ document.addEventListener('DOMContentLoaded', function () {
 	const emailRegExp = /^[=_0-9a-zA-Z+~'!\$&*^`|\\\#%/?{}-]+(\.[=_0-9a-zA-Z+~'!\$&*^`|\\\#%/?{}-]+)*@(([-0-9a-zA-Z]+\.)+)([a-zA-Z0-9-]{2,4})$/;
 	const nameMatch = (nameValue) =>  /^[a-zA-Z0-9](?:\s?[a-zA-Z0-9])*$/.test(nameValue) && nameValue.length <= 50;
 
+	const orderChangeForm = document.querySelector('#form-edit-order');
 	const formFirstName = document.querySelector('#reg-form-name');
 	const formLastName = document.querySelector('#reg-form-lastname');
 	const formEmail = document.querySelector('#reg-form-email');
@@ -11,12 +12,25 @@ document.addEventListener('DOMContentLoaded', function () {
 	const contactInputEmail = document.querySelector('#contact-form-email');
 	const contactBtn = document.querySelector('#contact-btn');
 
+	//	init
 	if (contactInputName.value.length === 0 || contactInputEmail.value.length === 0) {
 		contactBtn.disabled = true;
 	}
 
 	if (formFirstName.value.length === 0 || formLastName.value.length === 0 || formEmail.value.length === 0 || formTel.value.length === 0) {
 		regFormBtn.disabled = true;
+	}
+
+	const radioBtnGroup = orderChangeForm.plan;
+	let prev = null;
+	for (let i = 0; i < radioBtnGroup.length; i++) {
+		radioBtnGroup[i].addEventListener('change', function() {
+			(prev) ? regFormBtn.disabled = false: null;
+			if (this !== prev) {
+				prev = this;
+				regFormBtn.disabled = false
+			}
+		});
 	}
 
 	//email

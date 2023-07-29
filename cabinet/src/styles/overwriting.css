@@ -42,6 +42,7 @@
   /* For iOS < 15 */
 	@apply w-[20px] h-[20px] bg-white border-dark-gray/40 border grid rounded-[50%] m-0;
   place-content: center;
+	overflow: hidden;
 }
 
 .radio-btn:before {
