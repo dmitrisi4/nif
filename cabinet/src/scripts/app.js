@@ -1,13 +1,11 @@
+import {LOGIN_URL, ORDERS_URL, CONTACTS_URL} from './api';
 import {choiseByValue, getValue, COUNTRIES} from './select';
 import {formatToCommonDate} from './utilits';
+
 
 if (document) {
 
     document.addEventListener('DOMContentLoaded', function () {
-        const LOGIN_URL = 'http://localhost:4000/api/auth/login';
-        const ORDERS_URL = 'http://localhost:4000/api/order/';
-        const CONTACTS_URL = 'http://localhost:4000/api/contacts/';
-
         const loginSection = document.getElementById('login-section');
         const pageSection = document.getElementById('page-section');
         const btnExitWrapper = document.getElementById('btn-exit-wrapper');
@@ -484,7 +482,6 @@ if (document) {
             if (name === 'contact-table') tableContactContainer.innerHTML = '';
         };
 
-
         // create table
         function createTableContacts(contactsData) {
             // title table header
@@ -513,19 +510,6 @@ if (document) {
             // add table
             tableContainer.append(dom('div', '', ...rows));
             createdTableContacts = true;
-        }
-
-        function formatToCommonDate(dateString) {
-            const date = new Date(dateString);
-            const year = date.getFullYear();
-            const month = String(date.getMonth() + 1).padStart(2, '0');
-            const day = String(date.getDate()).padStart(2, '0');
-            const hours = String(date.getHours()).padStart(2, '0');
-            const minutes = String(date.getMinutes()).padStart(2, '0');
-            const seconds = String(date.getSeconds()).padStart(2, '0');
-
-            // Формат: гггг-мм-дд чч:мм:сс
-            return `${year}-${month}-${day} ${hours}:${minutes}:${seconds}`;
         }
 
 

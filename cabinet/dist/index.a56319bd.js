@@ -574,12 +574,10 @@ function hmrAccept(bundle /*: ParcelRequire */ , id /*: string */ ) {
 }
 
 },{}],"bAabt":[function(require,module,exports) {
+var _api = require("./api");
 var _select = require("./select");
 var _utilits = require("./utilits");
 if (document) document.addEventListener("DOMContentLoaded", function() {
-    const LOGIN_URL = "http://localhost:4000/api/auth/login";
-    const ORDERS_URL = "http://localhost:4000/api/order/";
-    const CONTACTS_URL = "http://localhost:4000/api/contacts/";
     const loginSection = document.getElementById("login-section");
     const pageSection = document.getElementById("page-section");
     const btnExitWrapper = document.getElementById("btn-exit-wrapper");
@@ -621,7 +619,7 @@ if (document) document.addEventListener("DOMContentLoaded", function() {
     // login listener
     loginForm.addEventListener("submit", (e)=>{
         e.preventDefault();
-        login(LOGIN_URL, {
+        login((0, _api.LOGIN_URL), {
             email: loginEmail.value,
             password: loginPassword.value
         });
@@ -692,7 +690,7 @@ if (document) document.addEventListener("DOMContentLoaded", function() {
     }
     async function getOrders() {
         const tokenAuth = getCookie("tokenAuth");
-        const response = await fetch(ORDERS_URL, {
+        const response = await fetch((0, _api.ORDERS_URL), {
             headers: {
                 "Authorization": tokenAuth
             }
@@ -711,7 +709,7 @@ if (document) document.addEventListener("DOMContentLoaded", function() {
     async function removeOrder(id) {
         const tokenAuth = getCookie("tokenAuth");
         if (tokenAuth) try {
-            const response = await fetch(`${ORDERS_URL}${id}`, {
+            const response = await fetch(`${(0, _api.ORDERS_URL)}${id}`, {
                 method: "DELETE",
                 headers: {
                     "Authorization": tokenAuth
@@ -743,7 +741,7 @@ if (document) document.addEventListener("DOMContentLoaded", function() {
         };
         const tokenAuth = getCookie("tokenAuth");
         if (tokenAuth) try {
-            const response = await fetch(`${ORDERS_URL}${id}`, {
+            const response = await fetch(`${(0, _api.ORDERS_URL)}${id}`, {
                 method: "PATCH",
                 headers: {
                     "Content-Type": "application/json",
@@ -811,7 +809,7 @@ if (document) document.addEventListener("DOMContentLoaded", function() {
         };
         const tokenAuth = getCookie("tokenAuth");
         if (tokenAuth) try {
-            const response = await fetch(`${CONTACTS_URL}${id}`, {
+            const response = await fetch(`${(0, _api.CONTACTS_URL)}${id}`, {
                 method: "PATCH",
                 headers: {
                     "Content-Type": "application/json",
@@ -848,7 +846,7 @@ if (document) document.addEventListener("DOMContentLoaded", function() {
     async function getContacts() {
         const tokenAuth = getCookie("tokenAuth");
         if (tokenAuth) try {
-            const response = await fetch(CONTACTS_URL, {
+            const response = await fetch((0, _api.CONTACTS_URL), {
                 headers: {
                     "Authorization": tokenAuth
                 }
@@ -863,7 +861,7 @@ if (document) document.addEventListener("DOMContentLoaded", function() {
     async function removeContacts(id) {
         const tokenAuth = getCookie("tokenAuth");
         if (tokenAuth) try {
-            const response = await fetch(`${CONTACTS_URL}${id}`, {
+            const response = await fetch(`${(0, _api.CONTACTS_URL)}${id}`, {
                 method: "DELETE",
                 headers: {
                     "Authorization": tokenAuth
@@ -960,7 +958,7 @@ if (document) document.addEventListener("DOMContentLoaded", function() {
         });
         const bodyRowArr = ordersData.map((rowData)=>{
             const colData = Object.values(rowData).map((data)=>{
-                const dataFormated = rowData.createdAt === data || rowData.updatedAt === data ? formatToCommonDate(data) : data;
+                const dataFormated = rowData.createdAt === data || rowData.updatedAt === data ? (0, _utilits.formatToCommonDate)(data) : data;
                 return dom("div", "", dataFormated);
             });
             colData.push(dom("div", "table-btns-wrap", ...[
@@ -1004,7 +1002,7 @@ if (document) document.addEventListener("DOMContentLoaded", function() {
         });
         const bodyRowArr = contactsData.map((rowData)=>{
             const colData = Object.values(rowData).map((data)=>{
-                const dataFormated = rowData.createdAt === data || rowData.updatedAt === data ? formatToCommonDate(data) : data;
+                const dataFormated = rowData.createdAt === data || rowData.updatedAt === data ? (0, _utilits.formatToCommonDate)(data) : data;
                 return dom("div", "", dataFormated);
             });
             colData.push(dom("div", "table-btns-wrap", ...[
@@ -1025,20 +1023,9 @@ if (document) document.addEventListener("DOMContentLoaded", function() {
         tableContainer.append(dom("div", "", ...rows));
         createdTableContacts = true;
     }
-    function formatToCommonDate(dateString) {
-        const date = new Date(dateString);
-        const year = date.getFullYear();
-        const month = String(date.getMonth() + 1).padStart(2, "0");
-        const day = String(date.getDate()).padStart(2, "0");
-        const hours = String(date.getHours()).padStart(2, "0");
-        const minutes = String(date.getMinutes()).padStart(2, "0");
-        const seconds = String(date.getSeconds()).padStart(2, "0");
-        // Формат: гггг-мм-дд чч:мм:сс
-        return `${year}-${month}-${day} ${hours}:${minutes}:${seconds}`;
-    }
 }, false);
 
-},{"./select":"hRSfJ","./utilits":"fWCLx"}],"hRSfJ":[function(require,module,exports) {
+},{"./select":"hRSfJ","./utilits":"fWCLx","./api":"kcudQ"}],"hRSfJ":[function(require,module,exports) {
 var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
 parcelHelpers.defineInteropFlag(exports);
 parcelHelpers.export(exports, "choiseByValue", ()=>choiseByValue);
@@ -7360,6 +7347,17 @@ function formatToCommonDate(dateString) {
     // Формат: гггг-мм-дд чч:мм:сс
     return `${year}-${month}-${day} ${hours}:${minutes}:${seconds}`;
 }
+
+},{"@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3"}],"kcudQ":[function(require,module,exports) {
+var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
+parcelHelpers.defineInteropFlag(exports);
+parcelHelpers.export(exports, "LOGIN_URL", ()=>LOGIN_URL);
+parcelHelpers.export(exports, "ORDERS_URL", ()=>ORDERS_URL);
+parcelHelpers.export(exports, "CONTACTS_URL", ()=>CONTACTS_URL);
+const API_URL = "http://localhost:4000/";
+const LOGIN_URL = `${API_URL}api/auth/login`;
+const ORDERS_URL = `${API_URL}api/order/`;
+const CONTACTS_URL = `${API_URL}api/contacts/`;
 
 },{"@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3"}]},["cu6sN","bAabt"], "bAabt", "parcelRequire7bbc")
 

@@ -1,3 +1,5 @@
+import {ORDERS_URL, CONTACTS_URL} from './api';
+
 if (document) {
 
 	const observerOptions = {
@@ -92,8 +94,6 @@ if (document) {
 			
 
 			// contact form
-			const CONTACTS_URL = 'http://localhost:4000/api/contacts';
-
 			contactForm.addEventListener('submit', (e) => {
 				e.preventDefault();
 				
@@ -123,8 +123,6 @@ if (document) {
 			}
 
 			// reg form
-			const ORDERS_URL = 'http://localhost:4000/api/order';
-
 			regForm.addEventListener('submit', (e) => {
 				e.preventDefault();
 				

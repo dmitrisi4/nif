@@ -8,5 +8,6 @@ module.exports.dbConfig = {
 
 module.exports.keys = {
 	jwt: 'dev-jwt',
-	cors: 'http://localhost:1234'
+	cors: 'http://localhost:1234',
+  port: process.env.PORT || 4000
 }
