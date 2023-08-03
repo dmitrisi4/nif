@@ -4,6 +4,7 @@ const User = db.user;
 const Op = db.Sequelize.Op;
 const jwt = require('jsonwebtoken');
 const errorHandler = require('../utils/errorHandler');
+const logger = require('../utils/loggerService');
 
 
 exports.login = (req, res) => {
@@ -20,25 +21,24 @@ exports.login = (req, res) => {
 					userId: user.id
 				}, keys.jwt, {expiresIn: 60 * 60});
 				
+				logger.http('Auth OK');
 				res.status(200).json({
 					token: `Bearer ${token}`
 				});
 			} else {
+				logger.http('Incorrect password');
 				res.status(401).json({
 					message: 'Incorrect password'
 				});
 			}
-			// res.send(data[0].email);
 		} else {
+			logger.http(`Cannot find user with email=${candidate}.`);
 			res.status(404).send({
 				message: `Cannot find user with email=${candidate}.`
 			});
 		}
 	})
 	.catch(err => {
-		// res.status(500).send({
-		// 	// message: "Error retrieving user with email=" + candidates
-		// });
 		errorHandler(res, err);
 	});
 };

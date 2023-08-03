@@ -6,7 +6,7 @@
 ```db.config.js``` тут подкллючение к бд
 ```config/keys.js``` тут ключ jwt и corsOptions
 
-сервер старутует с команды ```pm2 start index.js``` 
+сервер старутует с команды ```pm2 start nif-server``` 
 локально 
 ```npm run server```
 
@@ -20,4 +20,5 @@
 для локальной сборки 
 ```npm run start```
 
-
+Логи в 
+```logs/all.log``` & ```logs/error.log```

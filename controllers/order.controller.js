@@ -1,6 +1,7 @@
 const db = require('../models');
 const Orders = db.orders;
 const errorHandler = require('../utils/errorHandler');
+const logger = require('../utils/loggerService');
 
 module.exports.getAll = function(req, res) {
 	Orders.findAll()
@@ -8,6 +9,7 @@ module.exports.getAll = function(req, res) {
 		if (data) {
 			res.send(data);
 		} else {
+      logger.http('Cannot find orderss');
 			res.status(404).send({
 				message: `Cannot find orderss`
 			});
@@ -30,6 +32,7 @@ module.exports.create = function(req, res) {
 	// Validate request
   if (!bodyName && !bodyLastName && !bodyEmail && !bodyPhoneNumber && !bodyCountry &&
 		!bodySocial && !bodyPlan) {
+    logger.http('Content can not be empty!');
     res.status(400).send({
       message: "Content can not be empty!"
     });
@@ -48,6 +51,7 @@ module.exports.create = function(req, res) {
   };
 
 	Orders.create(order).then(data => {
+    logger.http(`Order ${data} created!`);
 		res.send(data);
 	})
 	.catch(err => {
@@ -57,22 +61,25 @@ module.exports.create = function(req, res) {
 
 module.exports.update = function(req, res) {
   const id = req.params.id;
-  console.log(req.body);
+
   Orders.update(req.body, {
     where: { id: id }
   })
     .then(num => {
       if (num == 1) {
+        logger.http(`Orders id=${id} was updated successfully.`);
         res.send({
           message: "Orders was updated successfully."
         });
       } else {
+        logger.http(`Cannot update Orders with id=${id}. Maybe Orders was not found or req.body is empty!`);
         res.send({
           message: `Cannot update Orders with id=${id}. Maybe Orders was not found or req.body is empty!`
         });
       }
     })
     .catch(err => {
+      logger.http(`Error updating Orders with id=${id}`);
       res.status(500).send({
         message: "Error updating Orders with id=" + id
       });
