@@ -1,0 +1,52 @@
+2023-08-03 15:01:45:145 [32minfo[39m: Server has been started on 4000
+2023-08-03 15:01:45:145 [32minfo[39m: Executing (default): SELECT TABLE_NAME FROM INFORMATION_SCHEMA.TABLES WHERE TABLE_TYPE = 'BASE TABLE' AND TABLE_NAME = 'Users' AND TABLE_SCHEMA = 'nifdb_orders'
+2023-08-03 15:01:45:145 [32minfo[39m: Executing (default): SHOW INDEX FROM `Users`
+2023-08-03 15:01:45:145 [32minfo[39m: Executing (default): SELECT TABLE_NAME FROM INFORMATION_SCHEMA.TABLES WHERE TABLE_TYPE = 'BASE TABLE' AND TABLE_NAME = 'Orders' AND TABLE_SCHEMA = 'nifdb_orders'
+2023-08-03 15:01:45:145 [32minfo[39m: Executing (default): SHOW INDEX FROM `Orders`
+2023-08-03 15:01:45:145 [32minfo[39m: Executing (default): SELECT TABLE_NAME FROM INFORMATION_SCHEMA.TABLES WHERE TABLE_TYPE = 'BASE TABLE' AND TABLE_NAME = 'Contacts' AND TABLE_SCHEMA = 'nifdb_orders'
+2023-08-03 15:01:45:145 [32minfo[39m: Executing (default): SHOW INDEX FROM `Contacts`
+2023-08-03 15:01:45:145 [32minfo[39m: Synced db
+2023-08-03 15:02:24:224 [32minfo[39m: Executing (default): SELECT `id`, `email`, `password`, `createdAt`, `updatedAt` FROM `Users` AS `Users` WHERE `Users`.`email` LIKE 'asd@das.sd';
+2023-08-03 15:02:24:224 [35mhttp[39m: Auth OK
+2023-08-03 15:02:24:224 [35mhttp[39m: ::1 POST /api/auth/login 200 190 - 21.334 ms
+
+2023-08-03 15:02:24:224 [32minfo[39m: Executing (default): SELECT `email`, `id` FROM `Users` AS `Users` WHERE `Users`.`id` = 1;
+2023-08-03 15:02:24:224 [32minfo[39m: Executing (default): SELECT `id`, `name`, `last_name`, `email`, `phone_number`, `social_network`, `country`, `plan`, `createdAt`, `updatedAt` FROM `Orders` AS `Orders`;
+2023-08-03 15:02:24:224 [35mhttp[39m: ::1 GET /api/order/ 304 - - 15.134 ms
+
+2023-08-03 15:02:24:224 [32minfo[39m: Executing (default): SELECT `email`, `id` FROM `Users` AS `Users` WHERE `Users`.`id` = 1;
+2023-08-03 15:02:24:224 [32minfo[39m: Executing (default): SELECT `id`, `name`, `email`, `comment`, `createdAt`, `updatedAt` FROM `Contacts` AS `Contacts`;
+2023-08-03 15:02:24:224 [35mhttp[39m: ::1 GET /api/contacts/ 304 - - 6.266 ms
+
+2023-08-03 15:03:43:343 [32minfo[39m: Executing (default): SELECT `email`, `id` FROM `Users` AS `Users` WHERE `Users`.`id` = 1;
+2023-08-03 15:03:43:343 [32minfo[39m: Executing (default): SELECT `id`, `name`, `last_name`, `email`, `phone_number`, `social_network`, `country`, `plan`, `createdAt`, `updatedAt` FROM `Orders` AS `Orders`;
+2023-08-03 15:03:43:343 [35mhttp[39m: ::1 GET /api/order/ 304 - - 13.329 ms
+
+2023-08-03 15:10:55:1055 [32minfo[39m: Executing (default): SELECT `email`, `id` FROM `Users` AS `Users` WHERE `Users`.`id` = 1;
+2023-08-03 15:10:55:1055 [32minfo[39m: Executing (default): SELECT `id`, `name`, `last_name`, `email`, `phone_number`, `social_network`, `country`, `plan`, `createdAt`, `updatedAt` FROM `Orders` AS `Orders`;
+2023-08-03 15:10:55:1055 [35mhttp[39m: ::1 GET /api/order/ 304 - - 15.308 ms
+
+2023-08-03 15:10:56:1056 [32minfo[39m: Executing (default): SELECT `email`, `id` FROM `Users` AS `Users` WHERE `Users`.`id` = 1;
+2023-08-03 15:10:56:1056 [32minfo[39m: Executing (default): SELECT `id`, `name`, `email`, `comment`, `createdAt`, `updatedAt` FROM `Contacts` AS `Contacts`;
+2023-08-03 15:10:56:1056 [35mhttp[39m: ::1 GET /api/contacts/ 304 - - 6.326 ms
+
+2023-08-03 15:10:57:1057 [32minfo[39m: Executing (default): SELECT `email`, `id` FROM `Users` AS `Users` WHERE `Users`.`id` = 1;
+2023-08-03 15:10:57:1057 [32minfo[39m: Executing (default): SELECT `id`, `name`, `email`, `comment`, `createdAt`, `updatedAt` FROM `Contacts` AS `Contacts`;
+2023-08-03 15:10:57:1057 [35mhttp[39m: ::1 GET /api/contacts/ 304 - - 5.196 ms
+
+2023-08-03 15:11:17:1117 info: Server has been started on 4000
+2023-08-03 15:11:18:1118 info: Executing (default): SELECT TABLE_NAME FROM INFORMATION_SCHEMA.TABLES WHERE TABLE_TYPE = 'BASE TABLE' AND TABLE_NAME = 'Users' AND TABLE_SCHEMA = 'nifdb_orders'
+2023-08-03 15:11:18:1118 info: Executing (default): SHOW INDEX FROM `Users`
+2023-08-03 15:11:18:1118 info: Executing (default): SELECT TABLE_NAME FROM INFORMATION_SCHEMA.TABLES WHERE TABLE_TYPE = 'BASE TABLE' AND TABLE_NAME = 'Orders' AND TABLE_SCHEMA = 'nifdb_orders'
+2023-08-03 15:11:18:1118 info: Executing (default): SHOW INDEX FROM `Orders`
+2023-08-03 15:11:18:1118 info: Executing (default): SELECT TABLE_NAME FROM INFORMATION_SCHEMA.TABLES WHERE TABLE_TYPE = 'BASE TABLE' AND TABLE_NAME = 'Contacts' AND TABLE_SCHEMA = 'nifdb_orders'
+2023-08-03 15:11:18:1118 info: Executing (default): SHOW INDEX FROM `Contacts`
+2023-08-03 15:11:18:1118 info: Synced db
+2023-08-03 15:11:38:1138 info: Executing (default): SELECT `email`, `id` FROM `Users` AS `Users` WHERE `Users`.`id` = 1;
+2023-08-03 15:11:38:1138 info: Executing (default): SELECT `id`, `name`, `email`, `comment`, `createdAt`, `updatedAt` FROM `Contacts` AS `Contacts`;
+2023-08-03 15:11:38:1138 http: ::1 GET /api/contacts/ 304 - - 20.724 ms
+
+2023-08-03 15:11:42:1142 info: Executing (default): SELECT `email`, `id` FROM `Users` AS `Users` WHERE `Users`.`id` = 1;
+2023-08-03 15:11:42:1142 info: Executing (default): SELECT `id`, `name`, `email`, `comment`, `createdAt`, `updatedAt` FROM `Contacts` AS `Contacts`;
+2023-08-03 15:11:42:1142 http: ::1 GET /api/contacts/ 304 - - 5.764 ms
+
