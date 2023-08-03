@@ -1,4 +1,3 @@
-require('./firebase');
 const app = require('./app');
 const {keys} = require('./env');
 const PORT = keys.port;
