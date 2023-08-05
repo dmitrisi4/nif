@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="ru">
 <head>
 	<meta charset="UTF-8">
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -418,7 +418,7 @@
 			</div>
 		</footer>
 
-		<section class="modal-reg modal-reg-bg fixed inset-0 bg-black/50 z-[110] overflow-y-scroll scale-0 transition-transform origin-left">
+		<section class="modal-reg modal-reg-bg fixed inset-0 z-[110] overflow-y-scroll scale-0 transition-transform origin-left">
 			<div class="modal-wrapper absolute max-w-[1022px] w-full mx-auto pt-[60px] px-2.5 md:px-[104px] pb-[36px]
 			  -translate-x-1/2 top-[8%] md:top-[6%] left-1/2 bg-white rounded-[25px]">
 				<button class="close-reg-form w-[50px] h-[50px] rounded-full bg-black flex justify-center items-center 
@@ -430,12 +430,12 @@
 					before:absolute	before:top-[2px] md:before:top-[-1px] before:left-11 before:md:left-1/2 before:-translate-x-1/2
 					before:rotate-[-3deg] before:z-10"><span class="relative z-20">online</span></p></span></h3>
 
-				<form class="w-full targetSelector" id="contactForm">
+				<form class="w-full targetSelector" id="regForm">
 					<div class="flex flex-col items-center pt-6">
 						<div class="w-full flex flex-col md:flex-row gap-5">
 							<div class="input-field relative">
 								<input class="input" type="text" id="reg-form-name" autocomplete="given-name" placeholder="First Name">
-								<label class="input-label" for="contact-form-name">First Name</label>
+								<label class="input-label" for="reg-form-name">First Name</label>
 							</div>
 							<div class="input-field relative">
 								<input class="input" type="text" id="reg-form-lastname" autocomplete="family-name" placeholder="Last Name">
@@ -473,7 +473,7 @@
 									checked>
 									<div>
 										<p class="font-caslalom font-[700] text-lg leading-[21px]">NIF in One working day €300</p>
-										<p class="text-sm font-opensans">Estimated delivery date is 09.06.2023</p>
+										<p class="text-sm font-opensans">Estimated delivery date is <span id="oneDayDate">09.06.2023</span></p>
 									</div>
 								</label>
 
@@ -481,7 +481,7 @@
 									<input class="radio-btn" type="radio" id="sixDay" name="plan" value="sixDay">
 									<div>
 										<p class="font-caslalom font-[700] text-lg leading-[21px]">NIF in Six working days €170</p>
-										<p class="text-sm font-opensans">Estimated delivery date is 15.06.2023</p>
+										<p class="text-sm font-opensans">Estimated delivery date is <span id="sixDayDate">15.06.2023</span></p>
 									</div>
 								</label>
 
@@ -489,7 +489,7 @@
 									<input class="radio-btn" type="radio" id="elevenDay" name="plan" value="elevenDay">
 									<div>
 										<p class="font-caslalom font-[700] text-lg leading-[21px]">NIF in Eleven working days €120</p>
-										<p class="text-sm font-opensans">Estimated delivery date is 20.06.2023</p>
+										<p class="text-sm font-opensans">Estimated delivery date is <span id="elevenDayDate">20.06.2023</span></p>
 									</div>
 								</label>
 							</fieldset>
@@ -513,7 +513,8 @@
 				<p class="text-gunmetal-gray text-xs mt-[95px] text-center">© 2023 NIF Portugal LLC. All rights reserved.</p>
 			</div>
 		</section>
-		<section class="modal-succes modal-reg-bg fixed inset-0 z-[110] overflow-y-scroll scale-0 transition-transform origin-left">
+
+		<section class="modal-succes modal-reg-bg fixed inset-0 z-[110] overflow-y-scroll transition-transform origin-left scale-0">
 			<div class="modal-wrapper absolute max-w-[1022px] w-full mx-auto pt-[60px] md:pt-[110px] px-2.5 md:px-[75spx] pb-[45px] md:pb-[65px]
 			-translate-x-1/2 top-[8%] md:top-[20%] left-1/2 bg-white rounded-[25px]">
 			<button class="close-saccess-form w-[50px] h-[50px] rounded-full bg-black flex justify-center items-center 

@@ -1,0 +1,263 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CurrencyFlow</title>
+    <link rel="icon" type="image/x-icon" href="/favicon.824cf0c5.ico">
+    <link rel="stylesheet" href="/index.c2b3c8ae.css">
+    <link rel="stylesheet" href="/index.7249d084.css">
+    <link rel="stylesheet" href="/index.c9e22b00.css">
+    <script defer="" src="/index.a56319bd.js"></script>
+    <script defer="" src="/index.43a7421f.js"></script>
+</head>
+<body>
+<div class="flex flex-col h-full relative">
+
+    <div class="flex-[1_0_auto]">
+        <header class="pt-[13px] pb-[14px] md:py-[15px] z-50 bg-white w-full">
+            <div class="container relative">
+                <div class="flex justify-center">
+                    <img class="w-[116px] h-[33px] md:min-w-[150px] md:h-[41px]" src="/logo.5b34b4d1.svg" alt="currency flow logo">
+                </div>
+                <div class="absolute right-0 top-1/2 -translate-y-1/2 hidden" id="btn-exit-wrapper">
+                    <button class="bg-lime-green text-base p-2 px-5 font-bold
+						border border-transparent hover:border-black" type="button" id="btn-exit">Exit
+                    </button>
+                </div>
+            </div>
+        </header>
+
+        <main id="nifOnline" class="overflow-hidden">
+            <div class="container">
+                <div class="flex justify-center items-center pt-20">
+                    <div class="hidden max-w-[300px]" id="register-section">
+                        <form id="form-registration">
+                            <div class="min-w-[300px] flex flex-col items-center">
+                                <h1 class="text-3xl font-bold">Registration</h1>
+                                <div class="input-field relative mt-5">
+                                    <input class="input" type="text" id="registration-email" autocomplete="email" placeholder="Email" required="">
+                                    <label class="input-label" for="registration-email">Email</label>
+                                </div>
+                                <p class="hidden text-red-600 text-base" id="email-message-error"></p>
+                                <div class="input-field relative mt-5">
+                                    <input class="input !pr-12" type="password" id="registration-password" autocomplete="new-password" placeholder="Password" required="">
+                                    <label class="input-label" for="registration-password">Password</label>
+                                    <button type="button" class="absolute right-4 top-1/2 -translate-y-1/2" id="btn-show-reg-pass">
+                                        <svg width="25px" height="25px" viewbox="0 0 24 24" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" fill="#000000"><g id="SVGRepo_bgCarrier" stroke-width="0"></g><g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g><g id="SVGRepo_iconCarrier"> <title>eye_close_line</title> <g id="页面-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd"> <g id="System" transform="translate(-384.000000, 0.000000)" fill-rule="nonzero"> <g id="eye_close_line" transform="translate(384.000000, 0.000000)"> <path d="M24,0 L24,24 L0,24 L0,0 L24,0 Z M12.5934901,23.257841 L12.5819402,23.2595131 L12.5108777,23.2950439 L12.4918791,23.2987469 L12.4918791,23.2987469 L12.4767152,23.2950439 L12.4056548,23.2595131 C12.3958229,23.2563662 12.3870493,23.2590235 12.3821421,23.2649074 L12.3780323,23.275831 L12.360941,23.7031097 L12.3658947,23.7234994 L12.3769048,23.7357139 L12.4804777,23.8096931 L12.4953491,23.8136134 L12.4953491,23.8136134 L12.5071152,23.8096931 L12.6106902,23.7357139 L12.6232938,23.7196733 L12.6232938,23.7196733 L12.6266527,23.7031097 L12.609561,23.275831 C12.6075724,23.2657013 12.6010112,23.2592993 12.5934901,23.257841 L12.5934901,23.257841 Z M12.8583906,23.1452862 L12.8445485,23.1473072 L12.6598443,23.2396597 L12.6498822,23.2499052 L12.6498822,23.2499052 L12.6471943,23.2611114 L12.6650943,23.6906389 L12.6699349,23.7034178 L12.6699349,23.7034178 L12.678386,23.7104931 L12.8793402,23.8032389 C12.8914285,23.8068999 12.9022333,23.8029875 12.9078286,23.7952264 L12.9118235,23.7811639 L12.8776777,23.1665331 C12.8752882,23.1545897 12.8674102,23.1470016 12.8583906,23.1452862 L12.8583906,23.1452862 Z M12.1430473,23.1473072 C12.1332178,23.1423925 12.1221763,23.1452606 12.1156365,23.1525954 L12.1099173,23.1665331 L12.0757714,23.7811639 C12.0751323,23.7926639 12.0828099,23.8018602 12.0926481,23.8045676 L12.108256,23.8032389 L12.3092106,23.7104931 L12.3186497,23.7024347 L12.3186497,23.7024347 L12.3225043,23.6906389 L12.340401,23.2611114 L12.337245,23.2485176 L12.337245,23.2485176 L12.3277531,23.2396597 L12.1430473,23.1473072 Z" id="MingCute" fill-rule="nonzero"> </path> <path d="M3.04923,9.31077 C3.01728,9.21295 3,9.10849 3,9 C3,8.44772 3.44772,8 4,8 C4.4597,8 4.84695,8.31019 4.96387,8.73268 C7.04968,15.7186 16.9456,15.7202 19.0348,8.73735 C19.1502,8.31248 19.5386,8 20,8 C20.5523,8 21,8.44772 21,9 C21,9.10681 20.9833,9.2097 20.9522,9.30621 C20.5515,10.6482 19.9241,11.7876 19.1387,12.7244 L20.4143,14 C20.8048,14.3905 20.8048,15.0237 20.4143,15.4142 C20.0238,15.8047 19.3906,15.8047 19.0001,15.4142 L17.6887,14.1028 C16.9745,14.6426 16.1912,15.0655 15.3686,15.3716 L15.7264,16.7071 C15.8694,17.2406 15.5528,17.7889 15.0193,17.9318 C14.4858,18.0748 13.9375,17.7582 13.7946,17.2247 L13.4311,15.8682 C12.4836,16.0084 11.5164,16.0084 10.5689,15.8682 L10.2054,17.2247 C10.0625,17.7582 9.51416,18.0748 8.9807,17.9318 C8.44723,17.7889 8.13065,17.2406 8.27359,16.7071 L8.63144,15.3716 C7.80891,15.0655 7.0256,14.6426 6.31146,14.1029 L5.00017,15.4142 C4.60964,15.8047 3.97648,15.8047 3.58596,15.4142 C3.19543,15.0237 3.19543,14.3905 3.58596,14 L4.86147,12.7245 C4.07689,11.7887 3.45009,10.6508 3.04923,9.31077 Z" id="路径" fill="#09244B"> </path> </g> </g> </g> </g></svg>
+                                    </button>
+                                </div>
+                                <p class="text-xs text-left self-start">Password must be at least 6 characters</p>                              
+                                <button class="text-lg leading-[22px] font-caslalom text-white-smoke w-full max-w-[290px] px-2
+									py-[19px] pr-10 bg-black hover:scale-105 rounded-[50px] flex justify-center relative mt-[30px]" id="registration-user-btn">
+                                    <span>Registration</span>
+                                    <div class="w-[26px] h-[26px] absolute top-1/2 -translate-y-1/2 right-[17px]">
+                                        <img src="/arrow-icon.b2e8ed9a.svg" alt="arrow icon">
+                                    </div>
+                                </button>
+                                <button type="button" class="text-lg leading-[22px] font-caslalom text-white-smoke w-full max-w-[290px] px-2
+                                py-[19px] pl-10 bg-black hover:scale-105 rounded-[50px] flex justify-center relative mt-[30px]" id="btn-return-login">
+                                <div class="w-[26px] h-[26px] absolute top-1/2 -translate-y-1/2 left-[17px]">
+                                    <img src="/arrow-icon.b2e8ed9a.svg" class="rotate-180" alt="arrow icon">
+                                </div>
+                                <span>Login</span>
+                                </button>
+                            </div>
+                        </form>
+                    </div>
+                    <div class="" id="login-section">
+                        <form id="form-login">
+                            <div class="min-w-[300px] flex flex-col items-center">
+                                <h1 class="text-3xl font-bold">Login</h1>
+                                <div class="input-field relative mt-5">
+                                    <input class="input" type="text" id="login-email" autocomplete="email" placeholder="Email" required="">
+                                    <label class="input-label" for="login-email">Email</label>
+                                </div>
+                                <div class="input-field relative mt-5">
+                                    <input class="input !pr-12" type="password" id="login-password" autocomplete="current-password" placeholder="Password" required="">
+                                    <label class="input-label" for="login-password">Password</label>
+                                    <button type="button" class="absolute right-4 top-1/2 -translate-y-1/2" id="btn-show-login-pass">
+                                        <svg width="25px" height="25px" viewbox="0 0 24 24" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" fill="#000000"><g id="SVGRepo_bgCarrier" stroke-width="0"></g><g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g><g id="SVGRepo_iconCarrier"> <title>eye_close_line</title> <g id="页面-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd"> <g id="System" transform="translate(-384.000000, 0.000000)" fill-rule="nonzero"> <g id="eye_close_line" transform="translate(384.000000, 0.000000)"> <path d="M24,0 L24,24 L0,24 L0,0 L24,0 Z M12.5934901,23.257841 L12.5819402,23.2595131 L12.5108777,23.2950439 L12.4918791,23.2987469 L12.4918791,23.2987469 L12.4767152,23.2950439 L12.4056548,23.2595131 C12.3958229,23.2563662 12.3870493,23.2590235 12.3821421,23.2649074 L12.3780323,23.275831 L12.360941,23.7031097 L12.3658947,23.7234994 L12.3769048,23.7357139 L12.4804777,23.8096931 L12.4953491,23.8136134 L12.4953491,23.8136134 L12.5071152,23.8096931 L12.6106902,23.7357139 L12.6232938,23.7196733 L12.6232938,23.7196733 L12.6266527,23.7031097 L12.609561,23.275831 C12.6075724,23.2657013 12.6010112,23.2592993 12.5934901,23.257841 L12.5934901,23.257841 Z M12.8583906,23.1452862 L12.8445485,23.1473072 L12.6598443,23.2396597 L12.6498822,23.2499052 L12.6498822,23.2499052 L12.6471943,23.2611114 L12.6650943,23.6906389 L12.6699349,23.7034178 L12.6699349,23.7034178 L12.678386,23.7104931 L12.8793402,23.8032389 C12.8914285,23.8068999 12.9022333,23.8029875 12.9078286,23.7952264 L12.9118235,23.7811639 L12.8776777,23.1665331 C12.8752882,23.1545897 12.8674102,23.1470016 12.8583906,23.1452862 L12.8583906,23.1452862 Z M12.1430473,23.1473072 C12.1332178,23.1423925 12.1221763,23.1452606 12.1156365,23.1525954 L12.1099173,23.1665331 L12.0757714,23.7811639 C12.0751323,23.7926639 12.0828099,23.8018602 12.0926481,23.8045676 L12.108256,23.8032389 L12.3092106,23.7104931 L12.3186497,23.7024347 L12.3186497,23.7024347 L12.3225043,23.6906389 L12.340401,23.2611114 L12.337245,23.2485176 L12.337245,23.2485176 L12.3277531,23.2396597 L12.1430473,23.1473072 Z" id="MingCute" fill-rule="nonzero"> </path> <path d="M3.04923,9.31077 C3.01728,9.21295 3,9.10849 3,9 C3,8.44772 3.44772,8 4,8 C4.4597,8 4.84695,8.31019 4.96387,8.73268 C7.04968,15.7186 16.9456,15.7202 19.0348,8.73735 C19.1502,8.31248 19.5386,8 20,8 C20.5523,8 21,8.44772 21,9 C21,9.10681 20.9833,9.2097 20.9522,9.30621 C20.5515,10.6482 19.9241,11.7876 19.1387,12.7244 L20.4143,14 C20.8048,14.3905 20.8048,15.0237 20.4143,15.4142 C20.0238,15.8047 19.3906,15.8047 19.0001,15.4142 L17.6887,14.1028 C16.9745,14.6426 16.1912,15.0655 15.3686,15.3716 L15.7264,16.7071 C15.8694,17.2406 15.5528,17.7889 15.0193,17.9318 C14.4858,18.0748 13.9375,17.7582 13.7946,17.2247 L13.4311,15.8682 C12.4836,16.0084 11.5164,16.0084 10.5689,15.8682 L10.2054,17.2247 C10.0625,17.7582 9.51416,18.0748 8.9807,17.9318 C8.44723,17.7889 8.13065,17.2406 8.27359,16.7071 L8.63144,15.3716 C7.80891,15.0655 7.0256,14.6426 6.31146,14.1029 L5.00017,15.4142 C4.60964,15.8047 3.97648,15.8047 3.58596,15.4142 C3.19543,15.0237 3.19543,14.3905 3.58596,14 L4.86147,12.7245 C4.07689,11.7887 3.45009,10.6508 3.04923,9.31077 Z" id="路径" fill="#09244B"> </path> </g> </g> </g> </g></svg>
+                                    </button>
+                                </div>
+
+                                <button class="text-lg leading-[22px] font-caslalom text-white-smoke w-full max-w-[290px] px-2
+									py-[19px] bg-black hover:scale-105 rounded-[50px] flex justify-center relative mt-[30px]">
+                                    <span>Login</span>
+                                    <div class="w-[26px] h-[26px] absolute top-1/2 -translate-y-1/2 right-[17px]">
+                                        <img src="/arrow-icon.b2e8ed9a.svg" alt="arrow icon">
+                                    </div>
+                                </button>
+
+                                <button type="button" class="text-lg leading-[22px] font-caslalom text-white-smoke w-full max-w-[290px] px-2
+                                py-[19px] pl-10 bg-black hover:scale-105 rounded-[50px] flex justify-center relative mt-[30px]" id="btn-return-reg">
+                                <div class="w-[26px] h-[26px] absolute top-1/2 -translate-y-1/2 left-[17px]">
+                                    <img src="/arrow-icon.b2e8ed9a.svg" class="rotate-180" alt="arrow icon">
+                                </div>
+                                <span>Registration</span>
+                                </button>
+                            </div>
+                        </form>
+                    </div>
+                    <!-- page section -->
+                    <div class="hidden flex-col w-full" id="page-section">
+                        <ul class="flex gap-3">
+                            <li>
+                                <button id="btn-orders-page" class="bg-lime-green text-base p-2 px-5 font-bold
+									border hover:border-black">Orders
+                                </button>
+                            </li>
+                            <li>
+                                <button id="btn-contacts-page" class="bg-lime-green text-base p-2 px-5 font-bold
+									border border-transparent hover:border-black">Contacts
+                                </button>
+                            </li>
+                        </ul>
+                        <div id="contact-page">
+                            <h1 class="text-lg font-bold text-center mt-5">Contacts Table</h1>
+							<div class="overflow-scroll">
+								<div class="table-wrapper" id="table-contacts-container"></div>
+							</div>
+                        </div>
+                        <div id="order-page" class="order-page-class">
+                            <h1 class="text-lg font-bold text-center">Orders Table</h1>
+							<div class="overflow-scroll">
+						    	<div class="table-wrapper" id="table-container"></div>
+							</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </main>
+    </div>
+
+    <div class="absolute inset-0 flex justify-center items-center backdrop-blur-md 
+        transition-transform origin-center" style="transform: scale(0)" id="modal-edit-order">
+        <div class="modal-wrapper max-w-[400px] w-full relative h-full pt-10">
+            <button class="close-reg-form w-[50px] h-[50px] rounded-full bg-black flex justify-center items-center
+				absolute right-2 xl:right-[-60px] top-[5px]" id="close-order-edit" type="button">
+                <img class="w-[25px] h-[25px]" src="/close-icon.48c1718d.svg" alt="close icon">
+            </button>
+            <form id="form-edit-order">
+                <div class="flex flex-row flex-wrap items-center pt-6 gap-x-5">
+                    <div class="w-full flex flex-col md:flex-row gap-5">
+                        <div class="input-field relative md:!max-w-[200px]">
+                            <input class="input" type="text" id="reg-form-name" autocomplete="given-name" placeholder="First Name">
+                            <label class="input-label" for="reg-form-name">First Name</label>
+                        </div>
+                        <div class="input-field relative md:!max-w-[200px]">
+                            <input class="input" type="text" id="reg-form-lastname" autocomplete="family-name" placeholder="Last Name">
+                            <label class="input-label" for="reg-form-lastname">Last Name</label>
+                        </div>
+                    </div>
+
+                    <div class="input-field relative mt-5 md:!max-w-[190px]">
+                        <input class="input" type="email" id="reg-form-email" autocomplete="email" placeholder="Email">
+                        <label class="input-label" for="reg-form-email">Email</label>
+                    </div>
+
+                    <div class="input-field relative mt-5 md:!max-w-[190px]">
+                        <input class="input" type="tel" id="reg-form-tel" autocomplete="tel" placeholder="Phone number" maxlength="14" required="">
+                        <label class="input-label" for="reg-form-tel">Phone number</label>
+                    </div>
+
+                    <div class="input-field relative mt-5">
+                        <input class="input" type="text" id="reg-form-social" placeholder="WhatsApp / Telegram">
+                        <label class="input-label" for="reg-form-social">WhatsApp / Telegram</label>
+                    </div>
+
+                    <div class="input-field relative mt-5">
+                        <div class="selectActivePlaceholder z-10 input-label">Country of residence</div>
+                        <select class="input" data-trigger="" placeholder="Country of residence" id="js-choice">
+                            <option>Country of residence</option>
+                        </select>
+                    </div>
+
+                    <div class="self-start mt-10 md:mt-5">
+                        <fieldset>
+                            <legend class="font-[700] text-2xl leading-7">Select your plan</legend>
+                            <label class="form-radio flex mt-5">
+                                <input class="radio-btn" type="radio" id="oneDay" name="plan" value="oneDay" checked="">
+                                <div>
+                                    <p class="font-caslalom font-[700] text-lg leading-[21px]">NIF in One working day
+                                        €300</p>
+                                    <p class="text-sm font-opensans">Estimated delivery date is <span id="oneDayDate">09.06.2023</span>
+                                    </p>
+                                </div>
+                            </label>
+
+                            <label class="form-radio flex mt-5">
+                                <input class="radio-btn" type="radio" id="sixDay" name="plan" value="sixDay">
+                                <div>
+                                    <p class="font-caslalom font-[700] text-lg leading-[21px]">NIF in Six working days
+                                        €170</p>
+                                    <p class="text-sm font-opensans">Estimated delivery date is <span id="sixDayDate">15.06.2023</span>
+                                    </p>
+                                </div>
+                            </label>
+
+                            <label class="form-radio flex mt-5">
+                                <input class="radio-btn" type="radio" id="elevenDay" name="plan" value="elevenDay">
+                                <div>
+                                    <p class="font-caslalom font-[700] text-lg leading-[21px]">NIF in Eleven working
+                                        days €120</p>
+                                    <p class="text-sm font-opensans">Estimated delivery date is <span id="elevenDayDate">20.06.2023</span></p>
+                                </div>
+                            </label>
+                        </fieldset>
+
+                    </div>
+
+                    <button class="text-sm leading-[19px] md:text-[22px] md:leading-[26px] font-caslalom text-white-smoke w-full max-w-[270px] md:max-w-[396px]
+							px-2 py-[19px] bg-black rounded-[50px] flex justify-center relative mt-[30px]" id="reg-form-btn">
+                        <span>SUBMIT</span>
+                        <div class="w-[26px] h-[26px] absolute top-1/2 -translate-y-1/2 right-[17px]">
+                            <img src="/arrow-icon.b2e8ed9a.svg" alt="arrow icon">
+                        </div>
+                    </button>
+                </div>
+            </form>
+        </div>
+    </div>
+    <div class="absolute inset-0 flex justify-center items-center backdrop-blur-md 
+		transition-transform origin-top" style="transform: scale(0)" id="modal-edit-contacts">
+        <div class="modal-wrapper max-w-[400px] w-full relative h-full pt-10">
+            <button class="close-reg-form w-[50px] h-[50px] rounded-full bg-black flex justify-center items-center
+				absolute right-2 xl:right-[-60px] top-[5px]" id="close-contact-edit" type="button">
+                <img class="w-[25px] h-[25px]" src="/close-icon.48c1718d.svg" alt="close icon">
+            </button>
+            <form class="w-full targetSelector" id="form-edit-contacts">
+                <div class="flex flex-col items-center pt-6">
+                    <div class="input-field relative">
+                        <input class="input" type="text" id="contact-form-name" autocomplete="nickname" placeholder="Name">
+                        <label class="input-label" for="contact-form-name">Name</label>
+                    </div>
+
+                    <div class="input-field relative mt-5">
+                        <input class="input" type="email" id="contact-form-email" autocomplete="email" placeholder="Email">
+                        <label class="input-label" for="contact-form-email">Email</label>
+                    </div>
+
+                    <div class="input-field relative mt-5">
+                        <textarea class="input !h-[163px] resize-none" id="contact-form-comment" placeholder="Comment"></textarea>
+                        <label class="input-label" for="contact-form-comment">Comment</label>
+                    </div>
+
+                    <button class="text-lg leading-[22px] font-caslalom text-white-smoke w-full max-w-[290px] px-2
+						py-[19px] bg-black rounded-[50px] flex justify-center relative mt-[30px]" id="contact-btn">
+                        <span>SEND</span>
+                        <div class="w-[26px] h-[26px] absolute top-1/2 -translate-y-1/2 right-[17px]">
+                            <img src="/arrow-icon.b2e8ed9a.svg" alt="arrow icon">
+                        </div>
+                    </button>
+                </div>
+            </form>
+        </div>
+    </div>
+
+</div>
+
+</body>
+</html>

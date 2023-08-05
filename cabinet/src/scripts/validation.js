@@ -2,6 +2,9 @@ document.addEventListener('DOMContentLoaded', function () {
 	const emailRegExp = /^[=_0-9a-zA-Z+~'!\$&*^`|\\\#%/?{}-]+(\.[=_0-9a-zA-Z+~'!\$&*^`|\\\#%/?{}-]+)*@(([-0-9a-zA-Z]+\.)+)([a-zA-Z0-9-]{2,4})$/;
 	const nameMatch = (nameValue) =>  /^[a-zA-Z0-9](?:\s?[a-zA-Z0-9])*$/.test(nameValue) && nameValue.length <= 50;
 
+	const registrationEmail = document.getElementById('registration-email');
+	const registrationPassword = document.getElementById('registration-password');
+	const registrationUserBtn = document.getElementById('registration-user-btn');
 	const orderChangeForm = document.querySelector('#form-edit-order');
 	const formFirstName = document.querySelector('#reg-form-name');
 	const formLastName = document.querySelector('#reg-form-lastname');
@@ -33,6 +36,25 @@ document.addEventListener('DOMContentLoaded', function () {
 		});
 	}
 
+		//email reg
+		const setInvalidEmailStateFormRegUser = () => {
+			registrationEmail.classList.add('invalid');
+			registrationUserBtn.disabled = true;
+		};
+		const setValidEmailStateFormRegUser = () => {
+			registrationEmail.classList.remove('invalid');
+			registrationUserBtn.disabled = false;
+		};
+		// password reg
+
+		const setInvalidPasswordStateFormRegUser = () => {
+			registrationPassword.classList.add('invalid');
+			registrationUserBtn.disabled = true;
+		};
+		const setValidPasswordStateFormRegUser = () => {
+			registrationPassword.classList.remove('invalid');
+			registrationUserBtn.disabled = false;
+		};
 	//email
 	const setInvalidEmailStateFormReg = () => {
 		formEmail.classList.add('invalid');
@@ -84,6 +106,23 @@ document.addEventListener('DOMContentLoaded', function () {
 	const validatorPhone = (phone) => {
 		return phone.replace(/[^0-9+]/g, '');
 	}
+
+	registrationEmail.addEventListener('input', () => {
+		const test = registrationEmail.value.length === 0 || emailRegExp.test(registrationEmail.value);
+		if (test) {
+			setValidEmailStateFormRegUser();
+		} else {
+			setInvalidEmailStateFormRegUser();
+		}
+	});
+
+	registrationPassword.addEventListener('input', () => {
+		if (registrationPassword.value.length < 6) {
+			setInvalidPasswordStateFormRegUser();
+		} else {
+			setValidPasswordStateFormRegUser();
+		}
+	});
 
 
 	formFirstName.addEventListener('input', () => {

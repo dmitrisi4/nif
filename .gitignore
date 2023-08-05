@@ -2,3 +2,4 @@ node_modules
 package-lock.json
 .parcel-cache
 env.js
+client/src/scripts/api.js
