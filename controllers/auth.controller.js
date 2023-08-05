@@ -59,7 +59,6 @@ exports.registration = (req, res) => {
 				message: textError
 			});
 			logger.http(textError);
-			const user = data[0];
 		} else {
 			// Create a user
 			const salt = bcrypt.genSaltSync(10);
