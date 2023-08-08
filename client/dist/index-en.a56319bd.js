@@ -574,6 +574,7 @@ function hmrAccept(bundle /*: ParcelRequire */ , id /*: string */ ) {
 }
 
 },{}],"bAabt":[function(require,module,exports) {
+var _api = require("./api");
 if (document) {
     const observerOptions = {
         rootMargin: "-50px 0px -55%",
@@ -661,7 +662,6 @@ if (document) {
         const sixDayDate = document.querySelector("#sixDayDate");
         const elevenDayDate = document.querySelector("#elevenDayDate");
         // contact form
-        const CONTACTS_URL = "http://localhost:4000/api/contacts";
         contactForm.addEventListener("submit", (e)=>{
             e.preventDefault();
             const body = {
@@ -669,7 +669,7 @@ if (document) {
                 email: contactInputEmail.value,
                 comment: contactInputComment.value
             };
-            sendContact(CONTACTS_URL, JSON.stringify(body));
+            sendContact((0, _api.CONTACTS_URL), JSON.stringify(body));
         });
         async function sendContact(url, data) {
             try {
@@ -686,7 +686,6 @@ if (document) {
             }
         }
         // reg form
-        const ORDERS_URL = "http://localhost:4000/api/order";
         regForm.addEventListener("submit", (e)=>{
             e.preventDefault();
             const body = {
@@ -698,7 +697,7 @@ if (document) {
                 country: selectCountries.value,
                 plan: document.querySelector("input[name=plan]:checked").value
             };
-            sendOrder(ORDERS_URL, JSON.stringify(body));
+            sendOrder((0, _api.ORDERS_URL), JSON.stringify(body));
         });
         async function sendOrder(url, data) {
             try {
@@ -839,6 +838,61 @@ if (document) {
         elevenDayDate.innerHTML = bodyDateString(elevenDay);
     }, false);
 }
+
+},{"./api":"kcudQ"}],"kcudQ":[function(require,module,exports) {
+var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
+parcelHelpers.defineInteropFlag(exports);
+parcelHelpers.export(exports, "ORDERS_URL", ()=>ORDERS_URL);
+parcelHelpers.export(exports, "CONTACTS_URL", ()=>CONTACTS_URL);
+var _env = require("../../../env");
+const API_URL = (0, _env.keys).api_url;
+const ORDERS_URL = `${API_URL}api/order/`;
+const CONTACTS_URL = `${API_URL}api/contacts/`;
+
+},{"@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3","../../../env":"dS1nW"}],"gkKU3":[function(require,module,exports) {
+exports.interopDefault = function(a) {
+    return a && a.__esModule ? a : {
+        default: a
+    };
+};
+exports.defineInteropFlag = function(a) {
+    Object.defineProperty(a, "__esModule", {
+        value: true
+    });
+};
+exports.exportAll = function(source, dest) {
+    Object.keys(source).forEach(function(key) {
+        if (key === "default" || key === "__esModule" || dest.hasOwnProperty(key)) return;
+        Object.defineProperty(dest, key, {
+            enumerable: true,
+            get: function() {
+                return source[key];
+            }
+        });
+    });
+    return dest;
+};
+exports.export = function(dest, destName, get) {
+    Object.defineProperty(dest, destName, {
+        enumerable: true,
+        get: get
+    });
+};
+
+},{}],"dS1nW":[function(require,module,exports) {
+module.exports.dbConfig = {
+    HOST: "127.0.0.1",
+    USER: "root",
+    PASSWORD: "",
+    DB: "nifdb_orders",
+    dialect: "mysql"
+};
+module.exports.keys = {
+    jwt: "dev-jwt",
+    cors: "http://localhost:1234",
+    port: 4000,
+    api_url: "http://localhost:4000/"
+};
 
 },{}]},["cu6sN","bAabt"], "bAabt", "parcelRequire7bbc")
 

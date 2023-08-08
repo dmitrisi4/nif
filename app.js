@@ -10,9 +10,16 @@ const morganMiddleware = require("./middleware/morgan.middleware");
 const logger = require('./utils/loggerService');
 
 
-var corsOptions = {
-  origin: keys.cors
-};
+const whitelist = [keys.cors, keys.cors2]
+const corsOptions = {
+  origin: function (origin, callback) {
+    if (whitelist.indexOf(origin) !== -1) {
+      callback(null, true)
+    } else {
+      callback(new Error('Not allowed by CORS'))
+    }
+  }
+}
 
 app.use(passport.initialize());
 require('./middleware/passport')(passport);

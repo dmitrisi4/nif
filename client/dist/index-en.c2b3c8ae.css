@@ -951,10 +951,6 @@ img, video {
   background-color: rgb(0 0 0 / var(--tw-bg-opacity));
 }
 
-.bg-black\/50 {
-  background-color: #00000080;
-}
-
 .bg-lime-green {
   --tw-bg-opacity: 1;
   background-color: rgb(183 248 0 / var(--tw-bg-opacity));

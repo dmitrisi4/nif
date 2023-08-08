@@ -4,3 +4,5 @@ package-lock.json
 env.js
 client/src/scripts/api.js
 cabinet/src/scripts/api.js
+logs/all.log
+logs/error.log
