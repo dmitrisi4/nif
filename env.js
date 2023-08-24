@@ -1,5 +1,5 @@
 module.exports.dbConfig = {
-  HOST: "ip-172-31-42-44",
+  HOST: "ip-172-31-42-44.eu-north-1.compute.internal",
   USER: "root",
   PASSWORD: "password",
   DB: "nif_db",
