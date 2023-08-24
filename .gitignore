@@ -5,5 +5,8 @@ client/src/scripts/api.js
 cabinet/src/scripts/api.js
 logs/all.log
 logs/error.log
-env.js
 
+.idea/nif.iml
+.idea/modules.xml
+.idea/vcs.xml
+.idea/.gitignore
