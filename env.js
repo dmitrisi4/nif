@@ -1,8 +1,8 @@
 module.exports.dbConfig = {
-  HOST: "127.0.0.1",
+  HOST: "ip-172-31-42-44",
   USER: "root",
-  PASSWORD: "",
-  DB: "nifdb_orders",
+  PASSWORD: "password",
+  DB: "nif_db",
   dialect: "mysql",
 };
 
