@@ -1,0 +1,9 @@
+RewriteEngine On
+RewriteBase /
+
+# Игнорировать существующие файлы и директории
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteCond %{REQUEST_FILENAME} !-d
+
+# Перенаправить все запросы на вашу главную страницу
+RewriteRule ^ index.html [QSA,L]
