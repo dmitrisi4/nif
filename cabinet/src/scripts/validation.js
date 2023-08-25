@@ -13,10 +13,11 @@ document.addEventListener('DOMContentLoaded', function () {
 	const regFormBtn = document.querySelector('#reg-form-btn');
 	const contactInputName = document.querySelector('#contact-form-name');
 	const contactInputEmail = document.querySelector('#contact-form-email');
+	const contactInputComment = document.querySelector('#contact-form-comment');
 	const contactBtn = document.querySelector('#contact-btn');
 
 	//	init
-	if (contactInputName.value.length === 0 || contactInputEmail.value.length === 0) {
+	if (contactInputName.value.length === 0 || contactInputEmail.value.length === 0 || contactInputComment.value.length === 0) {
 		contactBtn.disabled = true;
 	}
 
@@ -102,6 +103,16 @@ document.addEventListener('DOMContentLoaded', function () {
 		contactBtn.disabled = false;
 	};
 	// 
+	// contact comment
+	const setInvalidContactCommentStateFormReg = () => {
+		contactInputComment.classList.add('invalid');
+		contactBtn.disabled = true;
+	};
+	const setValidContactCommentStateFormReg = () => {
+		contactInputComment.classList.remove('invalid');
+		contactBtn.disabled = false;
+	};
+	// 
 	
 	const validatorPhone = (phone) => {
 		return phone.replace(/[^0-9+]/g, '');
@@ -171,6 +182,15 @@ document.addEventListener('DOMContentLoaded', function () {
 			setValidContactEmailStateFormReg();
 		} else {
 			setInvalidContactEmailStateFormReg();
+		}
+	});
+
+	contactInputComment.addEventListener('input', () => {
+		const test = contactInputComment.value.length <=  200;
+		if (test) {
+			setValidContactCommentStateFormReg();
+		} else {
+			setInvalidContactCommentStateFormReg();
 		}
 	});
 	
