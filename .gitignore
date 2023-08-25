@@ -1,8 +1,6 @@
 node_modules
 package-lock.json
 .parcel-cache
-client/src/scripts/api.js
-cabinet/src/scripts/api.js
 logs/all.log
 logs/error.log
 
