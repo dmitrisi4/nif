@@ -158,7 +158,8 @@ if (document) {
                     throw await response.json();
                 }
             } catch (error) {
-                regEmailErrorMessage.style.display = 'block';
+                regEmailErrorMessage.style.transform = 'translateY(0)';
+                regEmailErrorMessage.style.opacity = '1';
                 regEmailErrorMessage.innerHTML = error.message ? error.message : error;
                 console.error("Error:", error);
             }
