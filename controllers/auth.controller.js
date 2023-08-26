@@ -27,14 +27,15 @@ exports.login = (req, res) => {
 					token: `Bearer ${token}`,
 				});
 			} else {
-				const textError = `Incorrect password`;
+				const textError = `INCORRECT_USER_DATA`;
 				logger.http(textError);
 				res.status(401).json({
 					message: textError
 				});
 			}
 		} else {
-			const textError = `Cannot find user with email=${candidate}.`;
+			// const textError = `Cannot find user with email=${candidate}.`;
+			const textError = `INCORRECT_USER_DATA`;
 			logger.http(textError);
 			res.status(404).send({
 				message: textError

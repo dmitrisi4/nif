@@ -126,7 +126,7 @@ html, body {
 }
 
 .input-field {
-    @apply w-full max-w-[690px] relative;
+    @apply w-full max-w-[690px] relative z-10;
 }
 
 .input {
