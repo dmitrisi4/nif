@@ -24,7 +24,7 @@ if (document) {
         const loginPassword = document.getElementById('login-password');
         const btnReturnReg = document.getElementById('btn-return-reg');
         const btnLoginShowPass = document.getElementById('btn-show-login-pass');
-
+        const loginError = document.getElementById('login-error-msg');
 
         const btnOrdersPage = document.getElementById('btn-orders-page');
         const btnContactsPage = document.getElementById('btn-contacts-page');
@@ -118,11 +118,15 @@ if (document) {
                     setCookie('tokenAuth', result.token, 60);
                     location.reload();
                 } else {
-                    alert('There was a problem with the request');
                     throw await response.json();
                 }
             } catch (error) {
-                console.error("Error:", error.message ? error.message : error);
+                console.error("Error:", error.message);
+                if (error.message === 'INCORRECT_USER_DATA') {
+                    loginError.style.transform = 'translateY(0)';
+                    loginError.style.opacity = '1';
+
+                }
             }
         };
 
@@ -154,7 +158,8 @@ if (document) {
                     throw await response.json();
                 }
             } catch (error) {
-                regEmailErrorMessage.style.display = 'block';
+                regEmailErrorMessage.style.transform = 'translateY(0)';
+                regEmailErrorMessage.style.opacity = '1';
                 regEmailErrorMessage.innerHTML = error.message ? error.message : error;
                 console.error("Error:", error);
             }
