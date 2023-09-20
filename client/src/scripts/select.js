@@ -262,10 +262,20 @@ document.addEventListener('DOMContentLoaded', function () {
 		
 
 	const element = selectCounties;
+	const currentLang = window.location.pathname.replace('/index-', '').replace('.html', '');
+	const ENG_TEXT_PLACEHOLDER = 'This is a search placeholder';
+	const RU_TEXT_PLACEHOLDER = 'Поиск';
+	const UA_TEXT_PLACEHOLDER = 'Пошук';
+	const ENG_TEXT_CLICK = 'Press to select';
+	const RU_TEXT_CLICK = 'Нажмите для выбора';
+	const UA_TEXT_CLICK = 'Натисніть для вибору';
+	const searchPlaceholderValue = currentLang === 'en' ? ENG_TEXT_PLACEHOLDER : currentLang === 'ru' ? RU_TEXT_PLACEHOLDER : currentLang === 'ua' ? UA_TEXT_PLACEHOLDER : ENG_TEXT_PLACEHOLDER;
+	const itemSelectText = currentLang === 'en' ? ENG_TEXT_CLICK : currentLang === 'ru' ? RU_TEXT_CLICK : currentLang === 'ua' ? UA_TEXT_CLICK : ENG_TEXT_CLICK;
 	const choise = new Choices(element, {
 		allowHTML: true,
+		itemSelectText: itemSelectText,
 		placeholderValue: 'This is a placeholder set in the config',
-		searchPlaceholderValue: 'This is a search placeholder',
+		searchPlaceholderValue: searchPlaceholderValue,
 	});
 
 

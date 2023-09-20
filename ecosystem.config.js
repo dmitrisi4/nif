@@ -1,4 +1,4 @@
-const port = process.env['PM2_APP_PORT'] || 4000
+const port = process.env['PM2_APP_PORT'] || 4000;
 
 module.exports = {
   apps : [{

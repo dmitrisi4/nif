@@ -14,25 +14,43 @@ if (document) {
 
 	const observer = new IntersectionObserver(observerCallback, observerAnimationOptions);
 	const observerAnimations = new IntersectionObserver(observerMenuCallback, observerOptions);
-	const menuItemFirst = document.querySelector('.menu-item-first');
-	const menuItemSecond = document.querySelector('.menu-item-second');
-	const menuItemThird = document.querySelector('.menu-item-third');
+	const menuItemFirst = document.querySelectorAll('.menu-item-first');
+	const menuItemSecond = document.querySelectorAll('.menu-item-second');
+	const menuItemThird = document.querySelectorAll('.menu-item-third');
 
 	function observerMenuCallback(entries, observer) {
 		entries.forEach(entry => {
 			if(entry && entry.isIntersecting) {
 				if (entry.target.id === 'nifOnlineView') {
-					menuItemFirst.classList.add('active');
-					menuItemThird.classList.remove('active');
-					menuItemSecond.classList.remove('active');
+					menuItemFirst.forEach((itemFirst) => {
+						itemFirst.classList.add('active');
+					});
+					menuItemThird.forEach((itemThird) => {
+						itemThird.classList.remove('active');
+					});
+					menuItemSecond.forEach((itemSecond) => {
+						itemSecond.classList.remove('active');
+					});
 				} else if (entry.target.id === 'faqWrapper') {
-					menuItemFirst.classList.remove('active');
-					menuItemThird.classList.remove('active');
-					menuItemSecond.classList.add('active');
+					menuItemFirst.forEach((itemFirst) => {
+						itemFirst.classList.remove('active');
+					});
+					menuItemThird.forEach((itemThird) => {
+						itemThird.classList.remove('active');
+					});
+					menuItemSecond.forEach((itemSecond) => {
+						itemSecond.classList.add('active');
+					});
 				} else if (entry.target.id === 'contactForm') {
-					menuItemThird.classList.add('active');
-					menuItemFirst.classList.remove('active');
-					menuItemSecond.classList.remove	('active');
+					menuItemFirst.forEach((itemFirst) => {
+						itemFirst.classList.remove('active');
+					});
+					menuItemThird.forEach((itemThird) => {
+						itemThird.classList.add('active');
+					});
+					menuItemSecond.forEach((itemSecond) => {
+						itemSecond.classList.remove('active');
+					});
 				}
 			}
 		});
@@ -63,6 +81,7 @@ if (document) {
 			const langMenu = document.querySelector('.lang-menu');
 			const langComp = document.querySelector('.lang-comp');
 			const modalReg = document.querySelector('.modal-reg');
+			const detailsArr = document.querySelectorAll('.details');
 			const modalWrapper = document.querySelector('.modal-wrapper');
 			const modaCloseBtnlReg = document.querySelector('.close-reg-form');
 			const getNifBtn = document.querySelectorAll('.btn-get-nif');
@@ -293,6 +312,33 @@ if (document) {
 			const elevenDay = new Date();
 			elevenDay.setDate(elevenDay.getDate() + 11);
 			elevenDayDate.innerHTML = bodyDateString(elevenDay);
+
+
+			// details animation
+
+			const detailsAnimationStart = (el) => {
+				el.addEventListener("click", (e) => {
+					if (el.hasAttribute("open")) { // since it's not closed yet, it's open!
+						e.preventDefault(); // stop the default behavior, meaning - the hiding
+						el.classList.add("closing"); // add a class which applies the animation in CSS
+					}
+				});
+
+
+				// when the "close" animation is over
+				el.addEventListener("animationend", (e) => {
+					if (e.animationName === "close") {
+						el.removeAttribute("open"); // close the element
+						el.classList.remove("closing"); // remove the animation
+					}
+				});
+			};
+			
+
+			detailsArr.forEach(detailsEl => {
+				detailsAnimationStart(detailsEl);
+			})
+
 			
 	}, false);
 };

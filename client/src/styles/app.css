@@ -76,13 +76,26 @@ html, body {
 
 .main-menu {
 	z-index: 100;
+	@apply !flex flex-col absolute inset-0 z-[100] h-full w-full scale-50 opacity-0 transition-[transform,opacity,height] origin-top-right;
 }
 
 .opened-menu {
 	background: hsla(76, 100%, 49%, 0.8);
 	backdrop-filter: blur(10px);
-	@apply !flex flex-col absolute top-0 right-0 bottom-0 left-0 z-[100] h-full w-full;
+	@apply !flex flex-col absolute inset-0 z-[100] h-full w-full scale-100 overflow-visible opacity-100;
 }
+@media screen and (min-width: 997px) {
+	.opened-menu {
+		opacity: 0;
+	}
+}
+
+/* .menu-list {
+	opacity: 0;
+}
+.opened-menu .menu-list {
+	opacity: 1;
+} */
 
 .open-lang {
 	@apply !scale-y-100
@@ -380,4 +393,43 @@ html, body {
 	100% {
 		transform: rotate(360deg);
 	}
+}
+
+@keyframes open {
+  0% { height: 0;opacity: 0;transform: translateY(-5px) }
+  100% { height: auto;opacity: 1;transform: translateY(0px) }
+}
+
+/* closing animation */
+@keyframes close {
+  0% { height: auto;opacity: 1;transform: translateY(0px) }
+  100% { height: 0;opacity: 0;transform: translateY(5px) }
+}
+
+.details {
+	transition: max-height,translateY 0.09s linear;
+	overflow: hidden;
+	will-change: transform, opacity;
+	max-height: 150px;
+}
+.details[open] {
+	max-height: 500px;
+	transition: max-height,translateY 1s linear;
+}
+
+.details[open] summary~* {
+  animation: open 0.1s;
+	will-change: transform, opacity;
+}
+
+.details summary~* {
+	transform: translateY(0px);
+}
+
+/* closing class */
+.details.closing {
+}
+.details.closing summary~* {
+  animation: close .09s;
+	opacity: 0;
 }
