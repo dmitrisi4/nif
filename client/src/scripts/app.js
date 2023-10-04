@@ -93,6 +93,13 @@ if (document) {
 			const modalSucces = document.querySelector('.modal-succes');
 			const closeSaccessForm = document.querySelector('.close-saccess-form');
 			const closeSaccessBtn = document.querySelector('.close-saccess-btn');
+			const modalTerms = document.querySelector('.modal-terms');
+			const showTermsModalBtns = document.querySelectorAll('.show-terms-modal');
+			const closeTermsModalBtn = document.querySelector('.close-modal-terms');
+			let searchParams;
+			if (window && 'URLSearchParams' in window) {
+				searchParams = new URLSearchParams(window.location.search);
+			}
 
 			const regForm = document.querySelector('#regForm');
 			const formFirstName = document.querySelector('#reg-form-name');
@@ -177,11 +184,44 @@ if (document) {
 			
 
 			//open/close modal
+			const changeUrlParams = () => {
+				const newUrlWithOpenTerms = `${window.location.pathname}${searchParams.toString().length ? '?' + searchParams.toString(): ''}`;
+				history.pushState(null, '', newUrlWithOpenTerms);
+			};
+			const openTermsModal = () => {
+				if (modalTerms.classList.contains('scale-0')) {
+					modalTerms.classList.remove('scale-0');
+					modalTerms.classList.add('scale-100');
+					document.body.style.overflow = 'hidden';
+					searchParams.set('terms', 'open');
+					changeUrlParams();
+				}
+			};
+
+			const closeTermsModal = () => {
+				if (modalTerms.classList.contains('scale-100')) {
+					modalTerms.classList.remove('scale-100');
+					modalTerms.classList.add('scale-0');
+					document.body.style.overflow = 'visible';
+					searchParams.delete('terms');
+					changeUrlParams();
+				}
+			};
+
+			showTermsModalBtns.forEach((btn) => {
+				btn.addEventListener('click', openTermsModal);
+			});
+
+			closeTermsModalBtn.addEventListener('click', closeTermsModal);
+
+
 			const closeRegModal = () => {
 				if (modalReg.classList.contains('scale-100')) {
 					modalReg.classList.remove('scale-100');
 					modalReg.classList.add('scale-0');
 					document.body.style.overflow = 'visible';
+					searchParams.delete('reg');
+					changeUrlParams();
 				}
 			};
 			
@@ -223,6 +263,8 @@ if (document) {
 								modalReg.classList.remove('scale-0');
 								modalReg.classList.add('scale-100');
 								document.body.style.overflow = 'hidden';
+								searchParams.set('reg', 'open');
+								changeUrlParams();
 							}
 						});
 					});
@@ -295,8 +337,12 @@ if (document) {
 				}
 				const targetEl = event.target;
 
-				if (!modalWrapper.contains(targetEl)) {
+				if (!modalWrapper.contains(targetEl) && !modalTerms.contains(targetEl)) {
 					closeRegModal();
+				}
+
+				if (modalTerms.contains(targetEl)) {
+					closeTermsModal();
 				}
 			});
 

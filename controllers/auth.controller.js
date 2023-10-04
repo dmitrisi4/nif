@@ -53,7 +53,7 @@ exports.registration = (req, res) => {
 	const condition = candidate ? {email: {[Op.like]: `${candidate}`}} : null;
 
 	User.findAll({where: condition})
-	.then(data => {
+	.then(data => {f
 		if (data.length && data[0].email === candidate) {
 			const textError =  `User with this (${candidate}) email exists`;
 			res.status(409).send({

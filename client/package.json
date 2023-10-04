@@ -4,7 +4,7 @@
   "source": "src/index-en.html",
   "description": "",
   "scripts": {
-    "start": "parcel",
+    "start": "parcel src/index-*.html",
     "build": "parcel build src/index-*.html --public-url ./"
   },
   "author": "kardsich",
