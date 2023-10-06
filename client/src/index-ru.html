@@ -36,7 +36,11 @@
 							<ul class="flex flex-col items-center pt-[67px] pb-[77px] pl-[26px] pr-[24px] text-center bg-white font-caslalom
 								rounded-b-[25px]">
 								<li><a class="text-center text-[32px] leading-[38px] relative burger-menu-item menu-item  menu-item-first active" href="#nifOnline">NIF ОНЛАЙН</a></li>
-								<li><a class="text-center text-[32px] leading-[38px] my-[15px] mt-5 block menu-item  menu-item-second" href="#faq">FAQ</a></li>
+								<li>
+									<a class="faqLink text-center text-[32px] leading-[38px] my-[15px] mt-5 block menu-item  menu-item-second" href="#faq">FAQ</a>
+									<button class="faqBtn text-center text-[32px] leading-[38px] my-[15px] mt-5 block menu-item  menu-item-second hidden-importent"
+										type="button">FAQ</button>
+								</li>
 								<li><a class="text-center text-[32px] leading-[38px] my-[15px] block menu-item menu-item-third" href="#contact">КОНТАКТЫ</a></li>
 								<li class="w-full"><button class="btn-get-nif max-w-[280px] w-full py-[17px] rounded-[35px] bg-black text-white
 									text-xs font-[700] font-caslalom">ПОЛУЧИТЬ NIF ОНЛАЙ</button></li>
@@ -47,7 +51,11 @@
 							<div class="hidden lg:flex items-center w-full justify-end">
 								<ul class="flex relative bottom-[-16px]">
 									<li><a class="text-xs font-[700] font-caslalom text-black menu-item menu-item-first active" href="#nifOnline">NIF ОНЛАЙН</a></li>
-									<li><a class="text-xs font-[700] font-caslalom text-black ml-7 menu-item menu-item-second" href="#faq">FAQ</a></li>
+									<li>
+										<a class="faqLink text-xs font-[700] font-caslalom text-black ml-7 menu-item menu-item-second" href="#faq">FAQ</a>
+										<button class="faqBtn text-xs font-[700] font-caslalom text-black ml-7 menu-item menu-item-second hidden-importent" 
+											type="button">FAQ</button>
+									</li>
 									<li><a class="text-xs font-[700] font-caslalom text-black ml-7  menu-item menu-item-third" href="#contact">КОНТАКТЫ</a></li>
 								</ul>
 								<button class="btn-get-nif max-w-[280px] w-full py-[17px] ml-[120px] rounded-[35px] bg-black text-white
@@ -94,23 +102,46 @@
 							<div class="max-w-[800px] mx-auto relative z-10">
 								<div class="flex justify-center">
 									<div class="relative z-20">
+										<!--  -->
+										<noscript>
+											<div class="absolute z-20 -right-8 md:-right-24 -top-4 md:-top-10">
+												<div class="w-[21px] h-[5px] md:w-[54px] md:h-[10px] relative -left-2 md:-left-4
+												bg-black rotate-[-79deg] origin-left"></div>
+												<div class="w-[22px] h-[5px] md:w-[58px] md:h-[10px] relative md:-bottom-1
+													bg-black rotate-[-35deg] origin-left"></div>
+												<div class="w-[21px] h-[5px] md:w-[56px] md:h-[10px] relative left-1 -bottom-1 md:-bottom-3
+													bg-black rotate-[-4deg] origin-left"></div>
+											</div>
+											<p class="relative text-[37px] md:text-[62px] md:leading-[64px] font-[900] font-caslalom text-center flex
+											before:bg-lime-green before:w-[calc(100%+20px)] md:before:w-[calc(100%+40px)] before:h-[44px] before:max-h-[44px] md:before:h-[75px] md:before:max-h-[75px] 
+											before:absolute	before:top-[2px] md:before:top-[-10px] before:left-1/2 before:-translate-x-1/2
+											before:rotate-[-3deg] before:z-10"><span class="relative z-20">Без проблем</span></p>
+										</noscript>
 										<div class="absolute z-20 -right-8 md:-right-24 -top-4 md:-top-10">
 											<div class="targetSelector moveScale w-[21px] h-[5px] md:w-[54px] md:h-[10px] relative -left-2 md:-left-4
-											bg-black rotate-[-79deg] origin-left"></div>
+											bg-black rotate-[-79deg] origin-left" hidden></div>
 											<div class="targetSelector moveScale w-[22px] h-[5px] md:w-[58px] md:h-[10px] relative md:-bottom-1
-												bg-black rotate-[-35deg] origin-left"></div>
+												bg-black rotate-[-35deg] origin-left" hidden></div>
 											<div class="targetSelector moveScale w-[21px] h-[5px] md:w-[56px] md:h-[10px] relative left-1 -bottom-1 md:-bottom-3
-												bg-black rotate-[-4deg] origin-left"></div>
+												bg-black rotate-[-4deg] origin-left" hidden></div>
 										</div>
 										<p class="targetSelector moveLeft relative text-[37px] md:text-[62px] md:leading-[64px] font-[900] font-caslalom text-center flex
 										before:bg-lime-green before:w-[calc(100%+20px)] md:before:w-[calc(100%+40px)] before:h-[44px] before:max-h-[44px] md:before:h-[75px] md:before:max-h-[75px] 
 										before:absolute	before:top-[2px] md:before:top-[-10px] before:left-1/2 before:-translate-x-1/2
-										before:rotate-[-3deg] before:z-10"><span class="relative z-20">Без проблем</span></p>
+										before:rotate-[-3deg] before:z-10 hidden-importent"><span class="relative z-20">Без проблем</span></p>
+										<!--  -->
 									</div>
 								</div>
+								<!--  -->
+								<noscript>
+									<h1 class="relative text-[37px] md:text-[62px] md:leading-[64px] font-[900] leading-[35px] 
+									font-caslalom text-center -top-1">Услуга по приобретению португальского ИНН</h1>
+									<p class="text-sm md:text-base text-center">Ведущая онлайн-платформа для получения португальского налогового идентификатора (NIF) за считанные минуты. Попрощайтесь с длинными очередями, запутанной бумажной волокитой и ненужными задержками</p>
+								</noscript>
 								<h1 class="targetSelector moveRight relative text-[37px] md:text-[62px] md:leading-[64px] font-[900] leading-[35px] 
-								font-caslalom text-center -top-1">Услуга по приобретению португальского ИНН</h1>
-								<p class="targetSelector moveLeft text-sm md:text-base text-center">Ведущая онлайн-платформа для получения португальского налогового идентификатора (NIF) за считанные минуты. Попрощайтесь с длинными очередями, запутанной бумажной волокитой и ненужными задержками</p>
+								font-caslalom text-center -top-1" hidden>Услуга по приобретению португальского ИНН</h1>
+								<p class="targetSelector moveLeft text-sm md:text-base text-center hidden-importent">Ведущая онлайн-платформа для получения португальского налогового идентификатора (NIF) за считанные минуты. Попрощайтесь с длинными очередями, запутанной бумажной волокитой и ненужными задержками</p>
+								<!--  -->
 							</div>
 						</div>
 					</section>
@@ -168,7 +199,38 @@
 									inline relative before:bg-lime-green before:w-[calc(100%+10px)] before:h-[32px] before:max-h-[32px] md:before:h-[47px] md:before:max-h-[47px] 
 									before:absolute	before:top-[2px] md:before:top-[1px] before:left-1/2 before:-translate-x-1/2
 									before:rotate-[3deg] z-20 before:z-10"><span class="relative z-20">2 документа</span></p><span class="whitespace-nowrap"> , чтобы</span> приступить к работе</h3>
-								<ul class="flex flex-col md:flex-row mt-[30px] md:mt-[95px] relative z-20">
+								<noscript>
+									<ul class="flex flex-col md:flex-row mt-[30px] md:mt-[95px] relative z-20">
+										<li class="flex max-w-[306px]">
+											<div class="flex justify-center items-center
+											text-[22px] font-[700] font-caslalom
+											min-w-[43px] h-[42px] rounded-full border-black border-[2px] border-t-0">1</div>
+											<div class="ml-[17px]">
+												<p class="text-[22px] font-[700] font-caslalom pt-2">Действующий паспорт</p>
+												<p class="text-sm mt-[10px] leading-[19px]">(или национальное удостоверение личности для граждан ЕС).
+													Мы поддерживаем все национальности в нашей службе NIF.</p>
+											</div>
+										</li>
+										<li class="flex mt-[30px] md:mt-0 max-w-[306px] md:ml-[60px]">
+											<div class="flex justify-center items-center
+											text-[22px] font-[700] font-caslalom
+											min-w-[43px] h-[42px] rounded-full border-black border-[2px] border-l-0">2</div>
+											<div class="ml-[17px]">
+												<p class="text-[22px] font-[700] font-caslalom leading-[26px] pt-2 max-w-[]">Подтверждение адреса за пределами Португалии</p>
+												<a class="text-sm mt-[10px] leading-[19px] italic underline" href="#">Что можно использовать в качестве подтверждения адреса?</a>
+											</div>
+										</li>
+									</ul>
+									<p class="mt-[50px] text-xs opacity-40 max-w-[238px] md:max-w-[340px] mx-auto text-center z-20 relative">*Существуют дополнительные требования для несовершеннолетних и тех, кто родился в Португалии или имеет португальское гражданство.</p>
+									<button class="btn-get-started text-lg leading-[22px] font-caslalom text-white-smoke w-full max-w-[290px] px-2
+										py-[19px] bg-black rounded-[50px] flex justify-center relative z-[50] mt-[29px]" type="button">
+										<span class="pointer-events-auto">НАЧАТЬ</span>
+										<div class="w-[26px] h-[26px] absolute right-[17px]">
+											<img src="./assets/images/icons/arrow-icon.svg" alt="arrow icon">
+										</div>
+									</button>
+								</noscript>	
+								<ul class="targetSelector flex flex-col md:flex-row mt-[30px] md:mt-[95px] relative z-20 hidden-importent">
 									<li class="targetSelector moveRight flex max-w-[306px]">
 										<div class="flex justify-center items-center
 										text-[22px] font-[700] font-caslalom
@@ -189,9 +251,11 @@
 										</div>
 									</li>
 								</ul>
-								<p class="targetSelector moveScale mt-[50px] text-xs opacity-40 max-w-[238px] md:max-w-[340px] mx-auto text-center z-20 relative">*Существуют дополнительные требования для несовершеннолетних и тех, кто родился в Португалии или имеет португальское гражданство.</p>
+								<p class="targetSelector moveScale mt-[50px] text-xs opacity-40 max-w-[238px] md:max-w-[340px] 
+								mx-auto text-center z-20 relative hidden-importent">*Существуют дополнительные требования для несовершеннолетних и тех, кто родился в Португалии или имеет португальское гражданство.</p>
 								<button class="targetSelector moveScale btn-get-started text-lg leading-[22px] font-caslalom text-white-smoke w-full max-w-[290px] px-2
-									py-[19px] bg-black rounded-[50px] flex justify-center relative z-[50] mt-[29px]" type="button">
+									py-[19px] bg-black rounded-[50px] flex justify-center relative z-[50] mt-[29px] hidden-importent" 
+									type="button">
 									<span class="pointer-events-auto">НАЧАТЬ</span>
 									<div class="w-[26px] h-[26px] absolute right-[17px]">
 										<img src="./assets/images/icons/arrow-icon.svg" alt="arrow icon">
@@ -203,11 +267,55 @@
 					<section class="mt-[50px] vector-4">
 						<div class="container">
 							<div class="flex flex-col relative z-20">
+								<!--  -->
+								<noscript>
+									<h3 class="font-caslalom text-[28px] md:text-[42px] font-[700 leading-[33px] md:leading-[50px] text-center"><span>Get your NIF in <p class="whitespace-nowrap 
+										block md:inline relative"><span class="relative z-20 before:bg-lime-green before:w-[calc(100%+10px)] before:h-[32px] before:max-h-[32px] md:before:h-[47px] md:before:max-h-[47px] 
+										before:absolute	before:top-[2px] md:before:top-[-1px] before:left-1/2 before:-translate-x-1/2
+										before:rotate-[-3deg] before:z-10"><span class="relative z-20">3 простых шага</span></span></p></span></h3>
+									<ul class="flex flex-col md:flex-row md:flex-wrap gap-6 items-center mt-[30px] md:mt-[45px] md:max-2lg:justify-center 2lg:justify-between">
+										<li class="bg-white rounded-[25px] flex md:flex-col md:items-start 
+										py-[30px] pr-[70px] pl-[19px] md:min-h-[250px] max-w-[290px]" style="--anim-delay:0.1s;">
+											<div class="flex justify-center items-center
+											text-[22px] font-[700] font-caslalom
+											min-w-[43px] h-[42px] rounded-full border-black border-[2px] border-t-0">1</div>
+											<div class="ml-[17px] md:ml-0 md:mt-5">
+												<p class="text-[22px] leading-[26px] font-[700] font-caslalom">Разместить заказ</p>
+												<p class="text-sm">Произведите оплату в размере 150 долларов США и заполните нашу онлайн-форму.</p>
+											</div>
+										</li>
+										<li class="bg-white rounded-[25px] flex md:flex-col md:items-start py-[30px] pr-[70px] pl-[19px] mt-[97px] md:mt-0 md:min-h-[250px] max-w-[290px] relative
+										before:absolute before:top-[-73px] md:before:top-1/2 md:before:-translate-y-1/2 before:left-1/2 md:before:-left-[93px] before:-translate-x-1/2 md:before:-translate-x-0 md:before:-rotate-90
+										before:w-[33px] before:h-[53px] before:bg-[url('../assets/images/icons/big-arrov-icon.svg')]
+										before:bg-contain md:max-2lg:before:hidden before:bg-no-repeat" style="--anim-delay:0.4s;">
+											<div class="flex justify-center items-center
+											text-[22px] font-[700] font-caslalom
+											min-w-[43px] h-[42px] rounded-full border-black border-[2px] border-r-0">2</div>
+											<div class="ml-[17px] md:ml-0 md:mt-5">
+												<p class="text-[22px] leading-[26px] font-[700] font-caslalom">Подписать доверенность</p>
+												<p class="text-sm">Это позволит вашему фискальному представителю запросить NIF от вашего имени.</p>
+											</div>
+										</li>
+										<li class="bg-white rounded-[25px] flex md:flex-col md:items-start py-[30px] pr-[80px] pl-[19px] mt-[97px] md:mt-0 md:min-h-[250px] max-w-[290px] relative
+										before:absolute before:top-[-73px] md:before:top-1/2 md:before:-translate-y-1/2 before:left-1/2 md:before:-left-[93px] before:-translate-x-1/2 md:before:-translate-x-0 before:rotate-[4deg] md:before:-rotate-[74deg]
+										before:w-[33px] before:h-[53px] before:bg-[url('../assets/images/icons/big-arrov-icon.svg')] 
+										before:bg-contain md:max-2lg:before:hidden before:bg-no-repeat" style="--anim-delay:0.8s;">
+											<div class="flex justify-center items-center
+											text-[22px] font-[700] font-caslalom
+											min-w-[43px] h-[42px] rounded-full border-black border-[2px] border-b-0">3</div>
+											<div class="ml-[17px] md:ml-0 md:mt-5">
+												<p class="text-[22px] leading-[26px] font-[700] font-caslalom">Получите свой португальский NIF!</p>
+												<p class="text-sm">Вы получите NIF по электронной почте вместе с официальным PDF-файлом от Financas.</p>
+											</div>
+										</li>
+									</ul>
+								</noscript>
 								<h3 class="targetSelector moveLeft font-caslalom text-[28px] md:text-[42px] font-[700 leading-[33px] md:leading-[50px] text-center"><span>Get your NIF in <p class="whitespace-nowrap 
-									block md:inline relative"><span class="relative z-20 before:bg-lime-green before:w-[calc(100%+10px)] before:h-[32px] before:max-h-[32px] md:before:h-[47px] md:before:max-h-[47px] 
+									block md:inline relative" hidden><span class="relative z-20 before:bg-lime-green before:w-[calc(100%+10px)] before:h-[32px] before:max-h-[32px] md:before:h-[47px] md:before:max-h-[47px] 
 									before:absolute	before:top-[2px] md:before:top-[-1px] before:left-1/2 before:-translate-x-1/2
 									before:rotate-[-3deg] before:z-10"><span class="relative z-20">3 простых шага</span></span></p></span></h3>
-								<ul class="flex flex-col md:flex-row md:flex-wrap gap-6 items-center mt-[30px] md:mt-[45px] md:max-2lg:justify-center 2lg:justify-between">
+								<ul class="targetSelector flex flex-col md:flex-row md:flex-wrap gap-6 
+								items-center mt-[30px] md:mt-[45px] md:max-2lg:justify-center 2lg:justify-between hidden-importent">
 									<li class="targetSelector moveLeft bg-white rounded-[25px] flex md:flex-col md:items-start 
 									py-[30px] pr-[70px] pl-[19px] md:min-h-[250px] max-w-[290px]" style="--anim-delay:0.1s;">
 										<div class="flex justify-center items-center
@@ -243,6 +351,7 @@
 										</div>
 									</li>
 								</ul>
+								<!--  -->
 							</div>
 						</div>
 					</section>
@@ -280,11 +389,60 @@
 				</div>
 				
 				<div class="overflow-hidden">
-					<section class="mt-[30px] md:mt-[50px] relative z-20" id="faq">
+					<section class="pt-[30px] md:pt-[50px] relative z-20" id="faq">
 						<div class="container">
 							<div class="flex flex-col vector-5 targetSelector scroll-mt-[-200px]" id="faqWrapper">
-								<h3 class="targetSelector moveLeft font-caslalom text-[28px] md:text-[42px] leading-[33px] md:leading-[50px] text-center">Часто задаваемые вопросы</h3>
-								<div class="targetSelector moveScale mt-8 relative z-20">
+								<!--  -->
+								<noscript>
+									<h3 class="font-caslalom text-[28px] md:text-[42px] leading-[33px] md:leading-[50px] text-center">Часто задаваемые вопросы</h3>
+									<div class="mt-8 relative z-20">
+										<details class="details bg-white rounded-[25px] pt-[30px] md:pt-[32px] pb-[26px] md:pb-[36px] pl-5 pr-3 md:pl-10 relative 
+											before:absolute before:right-[16px] before:top-[27px] before:w-[35px] before:h-[35px] 
+											before:rounded-[25px] before:bg-black before:bg-[url('../assets/images/icons/sm-arrow-icon.svg')] before:bg-no-repeat before:pointer-events-none
+											before:bg-center mt-5 cursor-pointer open:before:rotate-180">
+											<summary class="list-none text-lg md:text-2xl leading-[21px] md:leading-[28px] font-caslalom font-[700] text-black pr-[60px] md:pr-[106px]">Что такое NIF?</summary>
+											<p class="mt-[15px] text-xs leading-[18px] cursor-text pr-[60px] md:pr-[106px]">NIF (Número de Identificação Fiscal) - это идентификационный номер налогоплательщика в Португалии. NIF необходим для совершения различных повседневных действий, таких как открытие банковского счета, подключение к телефонной сети, оформление медицинской страховки. Иногда NIF называют Número de Contribuinte.</p>
+										</details>
+										<details class="details bg-white rounded-[25px] pt-[30px] md:pt-[32px] pb-[26px] md:pb-[36px] pl-5 pr-3 md:pl-10 relative 
+											before:absolute before:right-[16px] before:top-[27px] before:w-[35px] before:h-[35px] 
+											before:rounded-[25px] before:bg-black before:bg-[url('../assets/images/icons/sm-arrow-icon.svg')] before:bg-no-repeat before:pointer-events-none
+											before:bg-center mt-5 cursor-pointer open:before:rotate-180">
+											<summary class="list-none text-lg md:text-2xl leading-[21px] md:leading-[28px] font-caslalom font-[700] text-black pr-[60px] md:pr-[106px]">Сколько времени требуется для получения NIF?</summary>
+											<p class="mt-[15px] text-xs md:text-sm leading-[18px] md:leading-[21px] cursor-text pr-[60px] md:pr-[106px]">Обычно вы можете рассчитывать на получение NIF в течение 1 недели. Это может занять больше времени, если в налоговом управлении происходят задержки.</p>
+										</details>
+										<details class="details bg-white rounded-[25px] pt-[30px] md:pt-[32px] pb-[26px] md:pb-[36px] pl-5 pr-3 md:pl-10 relative 
+											before:absolute before:right-[16px] before:top-[27px] before:w-[35px] before:h-[35px] 
+											before:rounded-[25px] before:bg-black before:bg-[url('../assets/images/icons/sm-arrow-icon.svg')] before:bg-no-repeat before:pointer-events-none
+											before:bg-center mt-5 cursor-pointer open:before:rotate-180">
+											<summary class="list-none text-lg md:text-2xl leading-[21px] md:leading-[28px] font-caslalom font-[700] text-black pr-[60px] md:pr-[106px]">Кто будет моим финансовым представителем?</summary>
+											<p class="mt-[15px] text-xs md:text-sm leading-[18px] md:leading-[21px] cursor-text pr-[60px] md:pr-[106px]">Мы связываем Вас с португальским юристом, который будет Вашим фискальным (налоговым) представителем и запросит NIF от Вашего имени.</p>
+										</details>
+										<details class="details bg-white rounded-[25px] pt-[30px] md:pt-[32px] pb-[26px] md:pb-[36px] pl-5 pr-3 md:pl-10 relative 
+											before:absolute before:right-[16px] before:top-[27px] before:w-[35px] before:h-[35px] 
+											before:rounded-[25px] before:bg-black before:bg-[url('../assets/images/icons/sm-arrow-icon.svg')] before:bg-no-repeat before:pointer-events-none
+											before:bg-center mt-5 cursor-pointer open:before:rotate-180">
+											<summary class="list-none text-lg md:text-2xl leading-[21px] md:leading-[28px] font-caslalom font-[700] text-black pr-[60px] md:pr-[106px]">Предлагаете ли Вы постоянное фискальное представительство?</summary>
+											<p class="mt-[15px] text-xs md:text-sm leading-[18px] md:leading-[21px] cursor-text pr-[60px] md:pr-[106px]">Да, но наши услуги фискального представителя ограничиваются получением NIF и пересылкой любых сообщений из налоговой службы до тех пор, пока вы не назначите нового фискального представителя (стоимость услуг составляет 150 долл. США в год).</p>
+										</details>
+										<details class="details bg-white rounded-[25px] pt-[30px] md:pt-[32px] pb-[26px] md:pb-[36px] pl-5 pr-3 md:pl-10 relative 
+											before:absolute before:right-[16px] before:top-[27px] before:w-[35px] before:h-[35px] 
+											before:rounded-[25px] before:bg-black before:bg-[url('../assets/images/icons/sm-arrow-icon.svg')] before:bg-no-repeat before:pointer-events-none
+											before:bg-center mt-5 cursor-pointer open:before:rotate-180">
+											<summary class="list-none text-lg md:text-2xl leading-[21px] md:leading-[28px] font-caslalom font-[700] text-black pr-[60px] md:pr-[106px]">Как получить NIF для своего ребенка?</summary>
+											<p class="mt-[15px] text-xs md:text-sm leading-[18px] md:leading-[21px] cursor-text pr-[60px] md:pr-[106px]">Просто заполните форму заказа, указав данные своего ребенка. Если вашему ребенку еще не исполнилось 18 лет, необходимо предоставить несколько дополнительных документов. Кроме того, оба родителя должны подписать доверенность.</p>
+										</details>
+										<details class="details bg-white rounded-[25px] pt-[30px] md:pt-[32px] pb-[26px] md:pb-[36px] pl-5 pr-3 md:pl-10 relative 
+											before:absolute before:right-[16px] before:top-[27px] before:w-[35px] before:h-[35px] 
+											before:rounded-[25px] before:bg-black before:bg-[url('../assets/images/icons/sm-arrow-icon.svg')] before:bg-no-repeat before:pointer-events-none
+											before:bg-center mt-5 cursor-pointer open:before:rotate-180">
+											<summary class="list-none text-lg md:text-2xl leading-[21px] md:leading-[28px] font-caslalom font-[700] text-black pr-[60px] md:pr-[106px]">Какие национальности поддерживает служба NIF?</summary>
+											<p class="mt-[15px] text-xs md:text-sm leading-[18px] md:leading-[21px] cursor-text pr-[60px] md:pr-[106px]">"Мы поддерживаем все национальности в рамках нашей услуги по получению NIF."</p>
+										</details>
+									</div>
+								</noscript>
+								<h3 class="targetSelector moveLeft font-caslalom text-[28px] md:text-[42px] 
+								leading-[33px] md:leading-[50px] text-center" hidden>Часто задаваемые вопросы</h3>
+								<div class="targetSelector moveScale mt-8 relative z-20" hidden>
 									<details class="details bg-white rounded-[25px] pt-[30px] md:pt-[32px] pb-[26px] md:pb-[36px] pl-5 pr-3 md:pl-10 relative 
 										before:absolute before:right-[16px] before:top-[27px] before:w-[35px] before:h-[35px] 
 										before:rounded-[25px] before:bg-black before:bg-[url('../assets/images/icons/sm-arrow-icon.svg')] before:bg-no-repeat before:pointer-events-none
@@ -328,13 +486,53 @@
 										<p class="mt-[15px] text-xs md:text-sm leading-[18px] md:leading-[21px] cursor-text pr-[60px] md:pr-[106px]">"Мы поддерживаем все национальности в рамках нашей услуги по получению NIF."</p>
 									</details>
 								</div>
+								<!--  -->
 							</div>
 						</div>
 					</section>
-					<div  id="contact" class="overflow-hidden">
+					<div id="contact" class="overflow-hidden">
 					<div class="container vector-6 pb-[50px] max-w-[1033px] ">
-						<section class="targetSelector moveRight mt-[50px] md:mt-[180px] pt-[30px] px-[18px] pb-[29px] rounded-[25px] bg-white -rotate-1 relative z-20
-						before:absolute before:-left-2 before:top-3 before:w-full before:h-[80%] before:bg-white/50 before:rounded-[25px] before:rotate-[-3deg]">
+						<!--  -->
+						<noscript>
+							<section class="mt-[50px] md:mt-[180px]
+							pt-[30px] px-[18px] pb-[29px] rounded-[25px] bg-white -rotate-1 relative z-20
+						 before:absolute before:-left-2 before:top-3 before:w-full before:h-[80%] 
+						 before:bg-white/50 before:rounded-[25px] before:rotate-[-3deg]" hidden>
+								 <div class="flex flex-col items-center rotate-1 relative z-20" style="--anim-delay:0.6s;">
+									 <h3 class="font-caslalom text-[28px] md:text-[42px] leading-[33px] md:leading-[50px] font-[700]">Свяжитесь с нами</h3>
+									 <form class="w-full">
+										 <div class="flex flex-col items-center pt-6">
+											 <div class="input-field relative">
+												 <input class="input" type="text" id="contact-form-name" autocomplete="nickname" placeholder="Имя">
+												 <label class="input-label" for="contact-form-name">Имя</label>
+											 </div>
+		 
+											 <div class="input-field relative mt-5">
+												 <input class="input" type="email" id="contact-form-email" autocomplete="email" placeholder="Email">
+												 <label class="input-label" for="contact-form-email">Email</label>
+											 </div>
+		 
+											 <div class="input-field relative mt-5">
+												 <textarea class="input !h-[163px] resize-none" id="contact-form-comment" placeholder="Комментарий"></textarea>
+												 <label class="input-label" for="contact-form-comment">Комментарий</label>
+											 </div>
+		 
+											 <button class="text-lg leading-[22px] font-caslalom text-white-smoke w-full max-w-[290px] px-2
+												 py-[19px] bg-black rounded-[50px] flex justify-center relative mt-[30px]" id="contact-btn">
+												 <span>ОТПРАВИТЬ</span>
+												 <div class="w-[26px] h-[26px] absolute top-1/2 -translate-y-1/2 right-[17px]">
+													 <img src="./assets/images/icons/arrow-icon.svg" alt="arrow icon">
+												 </div>
+											 </button>
+										 </div>
+									 </form>
+								 </div>
+						 </section>
+						</noscript>
+						<section class="targetSelector moveRight mt-[50px] md:mt-[180px]
+						 pt-[30px] px-[18px] pb-[29px] rounded-[25px] bg-white -rotate-1 relative z-20
+						before:absolute before:-left-2 before:top-3 before:w-full before:h-[80%] 
+						before:bg-white/50 before:rounded-[25px] before:rotate-[-3deg]" hidden>
 								<div class="targetSelector moveRight flex flex-col items-center rotate-1 relative z-20" style="--anim-delay:0.6s;">
 									<h3 class="font-caslalom text-[28px] md:text-[42px] leading-[33px] md:leading-[50px] font-[700]">Свяжитесь с нами</h3>
 									<form class="w-full targetSelector" id="contactForm">
@@ -365,6 +563,7 @@
 									</form>
 								</div>
 						</section>
+						<!--  -->
 					</div>
 				</div>
 				</div>
@@ -390,7 +589,8 @@
 								<a class="text-xs font-caslalom font-[700] text-gunmetal-gray" href="#contact">Контакты</a>
 							</li>
 							<li>
-								<a class="text-xs font-caslalom font-[700] text-gunmetal-gray" href="#faq">FAQ</a>
+								<button class="faqBtn text-xs font-caslalom font-[700] text-gunmetal-gray hidden-importent" type="button">FAQ</button>
+								<a class="faqLink text-xs font-caslalom font-[700] text-gunmetal-gray" href="#faq">FAQ</a>
 							</li>
 						</ul>
 					</div>
@@ -594,7 +794,7 @@
 						<li class="mt-2">
 								<h5 class="text-sm font-bold">11. Контактная информация</h5>
 								<ul class="pl-1 my-1">
-										<li class="text-sm">11.1. По всем вопросам и замечаниям, касающимся этих Условий, пожалуйста, свяжитесь с нами по адресу <a class="underline text-lime" href="https://stage.nif.online/#contact">https://stage.nif.online/#contact</a>.</li>
+										<li class="text-sm">11.1. По всем вопросам и замечаниям, касающимся этих Условий, пожалуйста, свяжитесь с нами по адресу <a class="underline text-lime" href="https://nif.online/ru#contact">https://nif.online/ru#contact</a>.</li>
 								</ul>
 						</li>
 				</ul>

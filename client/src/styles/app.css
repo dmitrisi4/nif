@@ -49,6 +49,10 @@ html, body {
 	background-color: #F5F5F5;
 }
 
+.hidden-importent {
+	display: none!important;
+}
+
 .footer {
 	flex-shrink: 0;
 }
@@ -135,7 +139,7 @@ html, body {
 
 
 .menu-item {
-	@apply block h-[40px]
+	@apply flex h-[40px]
 }
 .menu-item.active {
 	@apply relative before:block before:w-[calc(100%+10px)] before:h-[4px] before:left-1/2 before:-translate-x-1/2 before:bg-lime-green before:absolute before:-bottom-1;
@@ -145,8 +149,6 @@ html, body {
 	background: hsla(76, 100%, 49%, 0.8);
 	backdrop-filter: blur(10px);
 }
-
-
 
 .show-el {
 	opacity: 0;
@@ -221,11 +223,14 @@ html, body {
 	border-style: dashed;
 }
 
+.targetSelector {
+	will-change: transform, scale;
+}
 .targetSelector.moveRight {
 	@apply -translate-x-40 transition-[transform,opacity] duration-300 opacity-0;
-	transition-delay: var(--anim-delay);
 	transition-duration: 2s;
-	will-change: transform, scale;
+	transition-delay: var(--anim-delay);
+
 }
 .targetSelector.moveRight.active {
 	@apply translate-x-0 opacity-100;
@@ -233,16 +238,14 @@ html, body {
 
 .targetSelector.moveScale {
 	@apply scale-0 transition-[transform,opacity] duration-300 opacity-0;
-	transition-delay: var(--anim-delay);
 	transition-duration: 2s;
-	will-change: transform, scale;
+	transition-delay: var(--anim-delay);
 }
 
 .targetSelector.moveLeft {
 	@apply translate-x-40 transition-[transform,opacity] duration-300 opacity-0;
 	transition-delay: var(--anim-delay);
 	transition-duration: 2s;
-	will-change: transform, scale;
 }
 .targetSelector.moveLeft.active {
 	@apply translate-x-0 opacity-100;
@@ -252,7 +255,6 @@ html, body {
 	@apply -translate-y-40 transition-[transform,opacity] duration-300 opacity-0;
 	transition-delay: var(--anim-delay);
 	transition-duration: 2s;
-	will-change: transform, scale;
 }
 
 .targetSelector.moveScale.active {
@@ -270,7 +272,6 @@ html, body {
 	@apply -translate-x-40 transition-[transform,opacity] duration-300 opacity-0;
 	transition-delay: var(--anim-delay);
 	transition-duration: 2s;
-	will-change: transform, scale;
 }
 
 .targetSelector.moveRightSlow.active .plus-item-1, 
@@ -292,7 +293,6 @@ html, body {
 	@apply scale-0 transition-[transform,opacity] duration-300 opacity-0;
 	transition-delay: var(--anim-delay);
 	transition-duration: 2s;
-	will-change: transform, scale;
 }
 
 .targetSelector.showItems.active .api-item-1,
@@ -309,9 +309,8 @@ html, body {
 
 .targetSelector.moveUp {
 	@apply translate-y-40 transition-[transform,opacity] duration-300 opacity-0;
-	transition-delay: var(--anim-delay);
 	transition-duration: 1s;
-	will-change: transform, scale;
+	transition-delay: var(--anim-delay);
 }
 .targetSelector.moveUp.active {
 	@apply translate-y-0 opacity-100;

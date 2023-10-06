@@ -1108,8 +1108,20 @@ img, video {
   padding-right: .75rem;
 }
 
+.pr-\[20px\] {
+  padding-right: 20px;
+}
+
 .pr-\[24px\] {
   padding-right: 24px;
+}
+
+.pr-\[40px\] {
+  padding-right: 40px;
+}
+
+.pr-\[50px\] {
+  padding-right: 50px;
 }
 
 .pr-\[60px\] {
@@ -1384,6 +1396,10 @@ html, body {
   scroll-behavior: smooth !important;
 }
 
+.hidden-importent {
+  display: none !important;
+}
+
 .footer {
   flex-shrink: 0;
 }
@@ -1538,7 +1554,7 @@ html, body {
 
 .menu-item {
   height: 40px;
-  display: block;
+  display: flex;
 }
 
 .menu-item.active {
@@ -1640,16 +1656,18 @@ html, body {
   position: absolute;
 }
 
+.targetSelector {
+  will-change: transform, scale;
+}
+
 .targetSelector.moveRight {
   --tw-translate-x: -10rem;
   transform: translate(var(--tw-translate-x), var(--tw-translate-y)) rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y));
   opacity: 0;
   transition-property: transform, opacity;
-  transition-duration: .3s;
+  transition-duration: 2s;
   transition-timing-function: cubic-bezier(.4, 0, .2, 1);
   transition-delay: var(--anim-delay);
-  will-change: transform, scale;
-  transition-duration: 2s;
 }
 
 .targetSelector.moveRight.active {
@@ -1664,11 +1682,9 @@ html, body {
   transform: translate(var(--tw-translate-x), var(--tw-translate-y)) rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y));
   opacity: 0;
   transition-property: transform, opacity;
-  transition-duration: .3s;
+  transition-duration: 2s;
   transition-timing-function: cubic-bezier(.4, 0, .2, 1);
   transition-delay: var(--anim-delay);
-  will-change: transform, scale;
-  transition-duration: 2s;
 }
 
 .targetSelector.moveLeft {
@@ -1679,7 +1695,6 @@ html, body {
   transition-duration: .3s;
   transition-timing-function: cubic-bezier(.4, 0, .2, 1);
   transition-delay: var(--anim-delay);
-  will-change: transform, scale;
   transition-duration: 2s;
 }
 
@@ -1697,7 +1712,6 @@ html, body {
   transition-duration: .3s;
   transition-timing-function: cubic-bezier(.4, 0, .2, 1);
   transition-delay: var(--anim-delay);
-  will-change: transform, scale;
   transition-duration: 2s;
 }
 
@@ -1722,7 +1736,6 @@ html, body {
   transition-duration: .3s;
   transition-timing-function: cubic-bezier(.4, 0, .2, 1);
   transition-delay: var(--anim-delay);
-  will-change: transform, scale;
   transition-duration: 2s;
 }
 
@@ -1741,7 +1754,6 @@ html, body {
   transition-duration: .3s;
   transition-timing-function: cubic-bezier(.4, 0, .2, 1);
   transition-delay: var(--anim-delay);
-  will-change: transform, scale;
   transition-duration: 2s;
 }
 
@@ -1757,11 +1769,9 @@ html, body {
   transform: translate(var(--tw-translate-x), var(--tw-translate-y)) rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y));
   opacity: 0;
   transition-property: transform, opacity;
-  transition-duration: .3s;
+  transition-duration: 1s;
   transition-timing-function: cubic-bezier(.4, 0, .2, 1);
   transition-delay: var(--anim-delay);
-  will-change: transform, scale;
-  transition-duration: 1s;
 }
 
 .targetSelector.moveUp.active {
@@ -2319,10 +2329,6 @@ html, body {
     margin-top: 45px;
   }
 
-  .md\:mt-\[50px\] {
-    margin-top: 50px;
-  }
-
   .md\:mt-\[60px\] {
     margin-top: 60px;
   }
@@ -2666,6 +2672,14 @@ html, body {
 
   .lg\:pl-\[60px\] {
     padding-left: 60px;
+  }
+
+  .lg\:pr-\[70px\] {
+    padding-right: 70px;
+  }
+
+  .lg\:pr-\[80px\] {
+    padding-right: 80px;
   }
 
   .lg\:pt-\[90px\] {

@@ -1,6 +1,51 @@
 import {ORDERS_URL, CONTACTS_URL} from './api';
 
 if (document) {
+	const modalTerms = document.querySelector('.modal-terms');
+	const modalReg = document.querySelector('.modal-reg');
+
+	// check query params
+	let urlSearchParams;
+	if (window && 'URLSearchParams' in window) {
+		urlSearchParams = new URLSearchParams(window.location.search);
+		if (urlSearchParams.has('terms')) {
+			modalTerms.classList.add('scale-100');
+		}
+		
+		if (urlSearchParams.has('reg')) {
+			modalReg.classList.add('scale-100');
+		}
+
+		if (urlSearchParams.has('reg') && urlSearchParams.has('terms')) {
+			modalReg.classList.add('scale-100');
+			modalTerms.classList.add('scale-100');
+		}
+	}
+	// 
+
+	// scroll faq
+	const	scrollToFaq = () => {
+		const element = document.querySelector('#faq');
+		const topPos = (element.getBoundingClientRect().top + window.pageYOffset) - 90;
+
+		window.scroll({
+			top: topPos,
+			behavior: 'smooth'
+		});
+	};
+
+	const faqLinks = document.querySelectorAll('.faqLink');
+	const faqBtns = document.querySelectorAll ('.faqBtn');
+
+	faqLinks.forEach(links => {
+		links.classList.add('hidden-importent');
+	});
+	faqBtns.forEach(btns => {
+		btns.classList.remove('hidden-importent');
+		btns.addEventListener('click', scrollToFaq);
+	});
+	//
+		
 
 	const observerOptions = {
     rootMargin: '-50px 0px -55%',
@@ -69,6 +114,8 @@ if (document) {
 	let target = '.targetSelector';
 	document.querySelectorAll(target).forEach((i) => {
 			if (i) {
+				i.removeAttribute('hidden');
+				if (i.classList.contains('hidden-importent')) i.classList.remove('hidden-importent');
 				observer.observe(i);
 				observerAnimations.observe(i);
 			}
@@ -80,7 +127,6 @@ if (document) {
 			const langBtn = document.querySelector('.lang-btn');
 			const langMenu = document.querySelector('.lang-menu');
 			const langComp = document.querySelector('.lang-comp');
-			const modalReg = document.querySelector('.modal-reg');
 			const detailsArr = document.querySelectorAll('.details');
 			const modalWrapper = document.querySelector('.modal-wrapper');
 			const modaCloseBtnlReg = document.querySelector('.close-reg-form');
@@ -93,7 +139,6 @@ if (document) {
 			const modalSucces = document.querySelector('.modal-succes');
 			const closeSaccessForm = document.querySelector('.close-saccess-form');
 			const closeSaccessBtn = document.querySelector('.close-saccess-btn');
-			const modalTerms = document.querySelector('.modal-terms');
 			const showTermsModalBtns = document.querySelectorAll('.show-terms-modal');
 			const closeTermsModalBtn = document.querySelector('.close-modal-terms');
 			let searchParams;
@@ -117,7 +162,7 @@ if (document) {
 			const oneDayDate = document.querySelector('#oneDayDate');
 			const sixDayDate = document.querySelector('#sixDayDate');
 			const elevenDayDate = document.querySelector('#elevenDayDate');
-			
+
 
 			// contact form
 			contactForm.addEventListener('submit', (e) => {
