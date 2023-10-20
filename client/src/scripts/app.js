@@ -47,6 +47,7 @@ if (document) {
 	//
 		
 
+	// intesection Observer
 	const observerOptions = {
     rootMargin: '-50px 0px -55%',
     threshold: [0, 0.5, 1]
@@ -131,7 +132,7 @@ if (document) {
 			const modalWrapper = document.querySelector('.modal-wrapper');
 			const modaCloseBtnlReg = document.querySelector('.close-reg-form');
 			const getNifBtn = document.querySelectorAll('.btn-get-nif');
-			const getStartedBtn = document.querySelector('.btn-get-started');
+			const getStartedBtn = document.querySelectorAll('.btn-get-started');
 			const orderBtn = document.querySelectorAll('.order-btn');
 			const oneDayRadio = document.querySelector('#oneDay');
 			const sixDayRadio = document.querySelector('#sixDay');
@@ -141,6 +142,9 @@ if (document) {
 			const closeSaccessBtn = document.querySelector('.close-saccess-btn');
 			const showTermsModalBtns = document.querySelectorAll('.show-terms-modal');
 			const closeTermsModalBtn = document.querySelector('.close-modal-terms');
+			const btnDocumentsModal = document.querySelector('.btn-documents-modal');
+			const closeDocumentsModal = document.querySelector('.close-required-documents');
+			const requiredDocumentsModal = document.querySelector('.required-documents-modal');
 			let searchParams;
 			if (window && 'URLSearchParams' in window) {
 				searchParams = new URLSearchParams(window.location.search);
@@ -286,10 +290,48 @@ if (document) {
 				}
 			};
 
+			const openRequiredDocumentsModal = () => {
+				if (requiredDocumentsModal.classList.contains('scale-0')) {
+					requiredDocumentsModal.classList.remove('scale-0');
+					requiredDocumentsModal.classList.add('scale-100');
+					document.body.style.overflow = 'hidden';
+				}
+			};
+
+			const closeRequiredDocumentsModal = () => {
+				if (requiredDocumentsModal.classList.contains('scale-100')) {
+					requiredDocumentsModal.classList.remove('scale-100');
+					requiredDocumentsModal.classList.add('scale-0');
+					document.body.style.overflow = 'visible';
+				}
+			};
+
+			btnDocumentsModal.addEventListener('click', openRequiredDocumentsModal);
+			closeDocumentsModal.addEventListener('click', closeRequiredDocumentsModal);
+
+			const openModalReg = () => {
+				modalReg.classList.remove('scale-0');
+				modalReg.classList.add('scale-100');
+				document.body.style.overflow = 'hidden';
+				searchParams.set('reg', 'open');
+				changeUrlParams();
+			};
+
 			[orderBtn, getNifBtn, getStartedBtn].forEach(btn => {
 				if (btn.length > 1) {
 					btn.forEach(btnOrder => {
-						btnOrder.addEventListener('click', function(){
+						if(btnOrder.length > 1) {
+							btnOrder.forEach(btn => {
+								btn.addEventListener('click', function(event) {
+									event.stopPropagation();
+									if (modalReg.classList.contains('scale-0')) {
+										openModalReg();
+									}
+								});
+							});
+						}
+
+						btnOrder.addEventListener('click', function() {
 							event.stopPropagation();
 							if (btnOrder.classList.contains('order-btn-first')) {
 								sixDayRadio.checked = false;
@@ -305,20 +347,16 @@ if (document) {
 								elevenDayRadio.checked = true;
 							}
 							if (modalReg.classList.contains('scale-0')) {
-								modalReg.classList.remove('scale-0');
-								modalReg.classList.add('scale-100');
-								document.body.style.overflow = 'hidden';
-								searchParams.set('reg', 'open');
-								changeUrlParams();
+								openModalReg();
 							}
 						});
+
 					});
 				} else {
 					btn.addEventListener('click', function(event) {
 						event.stopPropagation();
 						if (modalReg.classList.contains('scale-0')) {
-							modalReg.classList.remove('scale-0');
-							modalReg.classList.add('scale-100');
+							openModalReg();
 						}
 					});
 				}				
@@ -388,6 +426,10 @@ if (document) {
 
 				if (modalTerms.contains(targetEl)) {
 					closeTermsModal();
+				}
+
+				if (requiredDocumentsModal.contains(targetEl)) {
+					closeRequiredDocumentsModal();
 				}
 			});
 

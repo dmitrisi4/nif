@@ -158,11 +158,31 @@
 					
 					<section class="targetSelector" id="nifOnlineView">
 						<div class="container">
-							<div class="flex flex-wrap gap-5 mt-[56px] md:mt-[70px] justify-between vector-2">
+							<div class="flex flex-wrap gap-5 mt-[56px] md:mt-[70px] justify-center md:justify-between vector-2">
 								<div class="bg-black rounded-[25px] py-10 lg:pt-[90px] px-5 lg:pl-[60px] lg:max-w-[calc(100%/1.5)] relative z-10">
 									<h2 class="text-white font-caslalom text-[28px] lg:text-[42px] leading-[33px] font-[700]">Why choose NIF online?</h2>
 									<p class="text-sm lg:text-base text-white mt-5">Our team of experienced professionals is always ready to assist you. Whether you have questions, need guidance, or encounter any difficulties during the process, our dedicated support team is here to provide you with prompt and reliable assistance.</p>
 								</div>
+								<noscript class="w-full flex justify-center">
+									<button class="btn-get-started md:hidden
+									text-lg leading-[22px] font-caslalom text-white-smoke w-full max-w-[290px] px-2
+									py-[19px] bg-black rounded-[50px] flex justify-center relative z-[50] mt-[29px]" 
+									type="button" hidden>
+									<span class="pointer-events-auto">GET STARTED</span>
+									<div class="w-[26px] h-[26px] absolute right-[17px]">
+										<img src="./assets/images/icons/arrow-icon.svg" alt="arrow icon">
+									</div>
+									</button>
+								</noscript>
+								<button class="targetSelector moveScale btn-get-started md:hidden
+								text-lg leading-[22px] font-caslalom text-white-smoke w-full max-w-[290px] px-2
+								py-[19px] bg-black rounded-[50px] flex justify-center relative z-[50] mt-[29px] hidden-importent" 
+								type="button" hidden>
+								<span class="pointer-events-auto">GET STARTED</span>
+								<div class="w-[26px] h-[26px] absolute right-[17px]">
+									<img src="./assets/images/icons/arrow-icon.svg" alt="arrow icon">
+								</div>
+							</button>
 								<!-- # -->
 								<div class="bg-white rounded-[25px] flex flex-col py-10 px-5 lg:px-10 mt-[34px] md:mt-0 relative z-10 
 								md:max-w-[calc(100%/2-20px)] lg:max-w-[calc(100%/3-20px)]">
@@ -228,8 +248,8 @@
 											text-[22px] font-[700] font-caslalom
 											min-w-[43px] h-[42px] rounded-full border-black border-[2px] border-l-0">2</div>
 											<div class="ml-[17px]">
-												<p class="text-[22px] font-[700] font-caslalom leading-[26px] pt-2 max-w-[]">Proof of address outside Portugal</p>
-												<a class="text-sm mt-[10px] leading-[19px] italic underline" href="#">What can I use as Proof of Address?</a>
+												<p class="text-[22px] font-[700] font-caslalom leading-[26px] pt-2">Proof of address outside Portugal</p>
+												<button class="btn-documents-modal text-sm mt-[10px] leading-[19px] italic underline" type="button">What can I use as Proof of Address?</button>
 											</div>
 										</li>
 									</ul>
@@ -251,8 +271,8 @@
 										text-[22px] font-[700] font-caslalom
 										min-w-[43px] h-[42px] rounded-full border-black border-[2px] border-l-0">2</div>
 										<div class="ml-[17px]">
-											<p class="text-[22px] font-[700] font-caslalom leading-[26px] pt-2 max-w-[]">Proof of address outside Portugal</p>
-											<a class="text-sm mt-[10px] leading-[19px] italic underline" href="#">What can I use as Proof of Address?</a>
+											<p class="text-[22px] font-[700] font-caslalom leading-[26px] pt-2">Proof of address outside Portugal</p>
+											<button class="btn-documents-modal text-sm mt-[10px] leading-[19px] italic underline" type="button">What can I use as Proof of Address?</button>
 										</div>
 									</li>
 								</ul>
@@ -296,7 +316,7 @@
 											min-w-[43px] h-[42px] rounded-full border-black border-[2px] border-t-0">1</div>
 											<div class="ml-[17px] md:ml-0 md:mt-5">
 												<p class="text-[22px] leading-[26px] font-[700] font-caslalom">Place your order</p>
-												<p class="text-sm">Complete payment of $150 and fill out our online form.</p>
+												<p class="text-sm">Fill out our online form and complete payment.</p>
 											</div>
 										</li>
 										<li class="bg-white rounded-[25px] flex md:flex-col md:items-start py-[30px] pr-[40px] lg:pr-[70px] pl-[19px] mt-[97px] md:mt-0 md:min-h-[250px] max-w-[290px] relative
@@ -341,7 +361,7 @@
 										min-w-[43px] h-[42px] rounded-full border-black border-[2px] border-t-0">1</div>
 										<div class="ml-[17px] md:ml-0 md:mt-5">
 											<p class="text-[22px] leading-[26px] font-[700] font-caslalom">Place your order</p>
-											<p class="text-sm">Complete payment of $150 and fill out our online form.</p>
+											<p class="text-sm">Fill out our online form and complete payment.</p>
 										</div>
 									</li>
 									<li class="targetSelector moveLeft bg-white rounded-[25px] flex md:flex-col md:items-start py-[30px] pr-[40px] lg:pr-[70px] pl-[19px] mt-[97px] md:mt-0 md:min-h-[250px] max-w-[290px] relative
@@ -878,6 +898,37 @@
 					<img class="scale-x-[-1] scale-y-[1]" src="./assets/images/icons/arrow-icon.svg" alt="arrow icon">
 				</div>
 			</button>
+			</div>
+		</div>
+		</section>
+		
+		<!-- required-documents -->
+		<section class="required-documents-modal modal-reg-bg fixed inset-0 z-[110] overflow-y-scroll transition-transform origin-left scale-0">
+			<div class="modal-wrapper absolute max-w-[1022px] w-full mx-auto pt-[60px] px-2.5 md:px-[35px] pb-[45px] 	-translate-x-1/2 top-[8%] md:top-[20%] left-1/2 bg-white rounded-[25px]">
+			<button class="close-required-documents w-[50px] h-[50px] rounded-full bg-black flex justify-center items-center 
+			absolute right-2 xl:right-[-60px] top-[-60px] xl:top-[-40px]" type="button">
+				<img class="w-[25px] h-[25px]" src="./assets/images/icons/close-icon.svg" alt="close icon">
+			</button>
+
+			<div>
+				<h3 class="text-center font-caslalom text-[28px] md:text-[42px] font-[700 leading-[33px] md:leading-[50px] text-center">Required documents</h3>
+				<p class="text-base mt-4 md:mt-5">To receive a NIF (Número de Identificação Fiscal) in Portugal, you only need to provide two (2) documents proving your identity and address. Below are the requirements for each document:</p>
+				<ul class="pt-2 pl-2.5 text-base">
+					<li class="py-1">
+						<p>1&#41; Passport or ID card:</p>
+						<p class="sm:pl-3">A valid passport or ID card with a clear photocopy.</p>
+					</li>
+					<li class="py-1">
+						<p>2&#41; Address Proof:</p>
+						<p class="sm:pl-3">The easiest option is a bank statement showing your current address and your name.</p>
+					</li>
+					<li class="py-1">
+						<p>Other options:</p>
+						<p class="sm:pl-3">- A driver's license with your current address.</p>
+						<p class="sm:pl-3">- A utility bill (e.g. electricity, water, gas) in your name.</p>
+					</li>
+				</ul>
+				<p class="pt-2 font-semibold">Make sure it is recent and has your name and current address outside of Portugal on it!</p>
 			</div>
 		</div>
 		</section>

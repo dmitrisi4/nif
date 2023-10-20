@@ -147,11 +147,31 @@
 					</section>
 					<section class="targetSelector" id="nifOnlineView">
 						<div class="container">
-							<div class="flex flex-wrap gap-5 mt-[56px] md:mt-[70px] justify-between vector-2">
+							<div class="flex flex-wrap gap-5 mt-[56px] md:mt-[70px] justify-center md:justify-between vector-2">
 								<div class="bg-black rounded-[25px] py-10 lg:pt-[90px] px-5 lg:pl-[60px] lg:max-w-[calc(100%/1.5)] relative z-10">
 									<h2 class="text-white font-caslalom text-[28px] lg:text-[42px] leading-[33px] font-[700]">Почему стоит выбрать NIF online?</h2>
 									<p class="text-sm lg:text-base text-white mt-5">Наша команда опытных специалистов всегда готова прийти к вам на помощь. Если у вас возникли вопросы, нужна консультация или вы столкнулись с какими-либо трудностями в процессе работы, наша специализированная служба поддержки готова оказать вам оперативную и надежную помощь.</p>
 								</div>
+								<noscript class="w-full flex justify-center">
+									<button class="btn-get-started md:hidden
+									text-lg leading-[22px] font-caslalom text-white-smoke w-full max-w-[290px] px-2
+									py-[19px] bg-black rounded-[50px] flex justify-center relative z-[50] mt-[29px]" 
+									type="button" hidden>
+									<span class="pointer-events-auto">НАЧАТЬ</span>
+									<div class="w-[26px] h-[26px] absolute right-[17px]">
+										<img src="./assets/images/icons/arrow-icon.svg" alt="arrow icon">
+									</div>
+									</button>
+								</noscript>
+								<button class="targetSelector moveScale btn-get-started md:hidden
+								text-lg leading-[22px] font-caslalom text-white-smoke w-full max-w-[290px] px-2
+								py-[19px] bg-black rounded-[50px] flex justify-center relative z-[50] mt-[29px] hidden-importent" 
+								type="button" hidden>
+								<span class="pointer-events-auto">НАЧАТЬ</span>
+								<div class="w-[26px] h-[26px] absolute right-[17px]">
+									<img src="./assets/images/icons/arrow-icon.svg" alt="arrow icon">
+								</div>
+								</button>
 								<!-- # -->
 								<div class="bg-white rounded-[25px] flex flex-col py-10 px-5 lg:px-10 mt-[34px] md:mt-0 relative z-10 
 								md:max-w-[calc(100%/2-20px)] lg:max-w-[calc(100%/3-20px)]">
@@ -216,8 +236,8 @@
 											text-[22px] font-[700] font-caslalom
 											min-w-[43px] h-[42px] rounded-full border-black border-[2px] border-l-0">2</div>
 											<div class="ml-[17px]">
-												<p class="text-[22px] font-[700] font-caslalom leading-[26px] pt-2 max-w-[]">Подтверждение адреса за пределами Португалии</p>
-												<a class="text-sm mt-[10px] leading-[19px] italic underline" href="#">Что можно использовать в качестве подтверждения адреса?</a>
+												<p class="text-[22px] font-[700] font-caslalom leading-[26px] pt-2">Подтверждение адреса за пределами Португалии</p>
+												<button class="btn-documents-modal text-left text-sm mt-[10px] leading-[19px] italic underline" type="button">Что можно использовать в качестве подтверждения адреса?</button>
 											</div>
 										</li>
 									</ul>
@@ -246,8 +266,8 @@
 										text-[22px] font-[700] font-caslalom
 										min-w-[43px] h-[42px] rounded-full border-black border-[2px] border-l-0">2</div>
 										<div class="ml-[17px]">
-											<p class="text-[22px] font-[700] font-caslalom leading-[26px] pt-2 max-w-[]">Подтверждение адреса за пределами Португалии</p>
-											<a class="text-sm mt-[10px] leading-[19px] italic underline" href="#">Что можно использовать в качестве подтверждения адреса?</a>
+											<p class="text-[22px] font-[700] font-caslalom leading-[26px] pt-2">Подтверждение адреса за пределами Португалии</p>
+											<button class="btn-documents-modal text-left text-sm mt-[10px] leading-[19px] italic underline" type="button">Что можно использовать в качестве подтверждения адреса?</button>
 										</div>
 									</li>
 								</ul>
@@ -359,8 +379,34 @@
 						<section class="mt-12 bg-black rounded-[25px] pt-[30px] pb-[23px] md:pb-[85px] md:pl-[60px] md:pt-[45px] md:pr-[56px] rotate-1">
 								<div class="flex flex-col items-center">
 									<h3 class="text-white font-[700] text-[28px] md:text-[42px] leading-[33px] md:leading-[50px] font-caslalom">Наша цена</h3>
-									<ul class="flex flex-col md:flex-row md:flex-wrap items-center mt-[39px] w-full justify-between md:max-2lg:justify-center
+									<noscript>
+										<ul class="targetSelector flex flex-col md:flex-row md:flex-wrap items-center mt-[39px] w-full justify-between md:max-2lg:justify-center
 										gap-10">
+										<li class="flex flex-col items-center" style="--anim-delay:0.1s;">
+											<div class="bg-white text-black -rotate-2 font-[600] text-xs md:text-base px-[29px] py-[6px]">1 ДЕНЬ</div>
+											<div class="text-white font-caslalom font-[700] text-[40px] md:text-[62px] leading-[48px] md:leading-[74px] mt-[5px]"><span class="text-[28px] md:text-[42px] leading-[33px] md:leading-[50px]">€</span> 300</div>
+											<button class="order-btn order-btn-first text-lime-green font-[700] text-base leading-[18px] font-caslalom
+												border-[1px] border-current rounded-[45px] p-5 min-w-[250px] mt-3 md:mt-[26px] hover:bg-lime-green hover:text-black 
+												transition-[background-color,color] duration-300" type="button">ЗАКАЗАТЬ</button>
+										</li>
+										<li class="flex flex-col items-center mt-10 md:mt-0" style="--anim-delay:0.4s;">
+											<div class="bg-white text-black -rotate-2 font-[600] text-xs md:text-base px-[29px] py-[6px]">6 ДНЕЙ</div>
+											<div class="text-white font-caslalom font-[700] text-[40px] md:text-[62px] leading-[48px] md:leading-[74px] mt-[5px]"><span class="text-[28px] md:text-[42px] leading-[33px] md:leading-[50px]">€</span> 170</div>
+											<button class="order-btn order-btn-six text-lime-green font-[700] text-base leading-[18px] font-caslalom
+												border-[1px] border-current rounded-[45px] p-5 min-w-[250px] mt-3 md:mt-[26px] hover:bg-lime-green hover:text-black
+												transition-[background-color,color] duration-300" type="button">ЗАКАЗАТЬ</button>
+										</li>
+										<li class="flex flex-col items-center mt-10 md:mt-0" style="--anim-delay:0.8s;">
+											<div class="bg-white text-black -rotate-2 font-[600] text-xs md:text-base px-[29px] py-[6px]">11 ДНЕЙ</div>
+											<div class="text-white font-caslalom font-[700] text-[40px] md:text-[62px] leading-[48px] md:leading-[74px] mt-[5px]"><span class="text-[28px] md:text-[42px] leading-[33px] md:leading-[50px]">€</span> 120</div>
+											<button class="order-btn order-btn-eleven text-lime-green font-[700] text-base leading-[18px] font-caslalom
+												border-[1px] border-current rounded-[45px] p-5 min-w-[250px] mt-3 md:mt-[26px] hover:bg-lime-green hover:text-black
+												transition-[background-color,color] duration-300" type="button">ЗАКАЗАТЬ</button>
+										</li>
+									</ul>
+									</noscript>
+									<ul class="flex flex-col md:flex-row md:flex-wrap items-center mt-[39px] w-full justify-between md:max-2lg:justify-center
+										gap-10 hidden-importent">
 										<li class="targetSelector moveLeft flex flex-col items-center" style="--anim-delay:0.1s;">
 											<div class="bg-white text-black -rotate-2 font-[600] text-xs md:text-base px-[29px] py-[6px]">1 ДЕНЬ</div>
 											<div class="text-white font-caslalom font-[700] text-[40px] md:text-[62px] leading-[48px] md:leading-[74px] mt-[5px]"><span class="text-[28px] md:text-[42px] leading-[33px] md:leading-[50px]">€</span> 300</div>
@@ -824,6 +870,37 @@
 					<img class="scale-x-[-1] scale-y-[1]" src="./assets/images/icons/arrow-icon.svg" alt="arrow icon">
 				</div>
 			</button>
+			</div>
+		</div>
+		</section>
+
+		<!-- required-documents -->
+		<section class="required-documents-modal modal-reg-bg fixed inset-0 z-[110] overflow-y-scroll transition-transform origin-left scale-0">
+			<div class="modal-wrapper absolute max-w-[1022px] w-full mx-auto pt-[60px] px-2.5 md:px-[35px] pb-[45px] 	-translate-x-1/2 top-[8%] md:top-[20%] left-1/2 bg-white rounded-[25px]">
+			<button class="close-required-documents w-[50px] h-[50px] rounded-full bg-black flex justify-center items-center 
+			absolute right-2 xl:right-[-60px] top-[-60px] xl:top-[-40px]" type="button">
+				<img class="w-[25px] h-[25px]" src="./assets/images/icons/close-icon.svg" alt="close icon">
+			</button>
+
+			<div class="">
+				<h3 class="text-center font-caslalom text-[28px] md:text-[42px] font-[700 leading-[33px] md:leading-[50px] text-center">Необходимые документы</h3>
+				<p class="text-base mt-4 md:mt-5">Для получения NIF (Número de Identificação Fiscal) в Португалии вам нужно предоставить всего два (2) документа, подтверждающих вашу личность и адрес. Ниже приведены требования к каждому из документов:</p>
+				<ul class="pt-2 pl-2.5 text-base">
+					<li class="py-1">
+						<p>1&#41; Паспорт или удостоверение личности:</p>
+						<p class="sm:pl-3">Действительный паспорт или удостоверение личности с четкой фотокопией.</p>
+					</li>
+					<li class="py-1">
+						<p>2&#41; Доказательство адреса:</p>
+						<p class="sm:pl-3">Самый простой вариант - это выписка из банка, на которой указан ваш текущий адрес и ваше имя.</p>
+					</li>
+					<li class="py-1">
+						<p>Другие варианты:</p>
+						<p class="sm:pl-3">- Водительские права с вашим текущим адресом.</p>
+						<p class="sm:pl-3">- Счет за коммунальные услуги (например, электроэнергию, воду, газ) на ваше имя.</p>
+					</li>
+				</ul>
+				<p class="pt-2 font-semibold">Убедитесь, что это недавнее удостоверение личности, на котором указано ваше имя и текущий адрес за пределами Португалии!</p>
 			</div>
 		</div>
 		</section>
