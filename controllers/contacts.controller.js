@@ -2,6 +2,7 @@ const db = require('../models');
 const Contacts = db.contacts;
 const errorHandler = require('../utils/errorHandler');
 const logger = require('../utils/loggerService');
+const emailService = require('../utils/emailService');
 
 module.exports.getAll = function(req, res) {
 	Contacts.findAll()
@@ -43,6 +44,7 @@ module.exports.create = function(req, res) {
   };
 
 	Contacts.create(contact).then(data => {
+    emailService('contact', contact.name, contact.email, contact.comment);
     logger.http(`Contact ${data} created successfully.`);
 		res.send(data);
 	})

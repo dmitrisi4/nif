@@ -2,6 +2,7 @@ const db = require('../models');
 const Orders = db.orders;
 const errorHandler = require('../utils/errorHandler');
 const logger = require('../utils/loggerService');
+const emailService = require('../utils/emailService');
 
 module.exports.getAll = function(req, res) {
 	Orders.findAll()
@@ -51,6 +52,7 @@ module.exports.create = function(req, res) {
   };
 
 	Orders.create(order).then(data => {
+    emailService('order', {name: order.name, lastName: order.last_name }, order.email, '', order.phone_number, order.social_network, order.country, order.plan);
     logger.http(`Order ${data} created!`);
 		res.send(data);
 	})
