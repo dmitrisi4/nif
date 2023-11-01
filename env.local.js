@@ -9,8 +9,8 @@ module.exports.dbConfig = {
 module.exports.keys = {
 	jwt: 'dev-jwt',
 	cors: 'http://localhost:1234',
-  port: '4000',
-	api_url: 'http://127.0.0.1:4000/'
+  cors2: 'http://localhost:60743',
+  port: process.env.PORT || 4000,
 }
 
 module.exports.mailServiceConfig = {

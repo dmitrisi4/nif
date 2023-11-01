@@ -11,7 +11,6 @@ module.exports.keys = {
 	cors: 'http://si4kard-nif-cabinet-front.s3-website.eu-north-1.amazonaws.com',
   cors2: 'http://si4kard-nif-font.s3-website.eu-north-1.amazonaws.com',
   port: process.env.PORT || 4000,
-  api_url: 'http://13.53.206.241:4000/'
 };
 
 module.exports.mailServiceConfig = {

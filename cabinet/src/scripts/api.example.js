@@ -1,5 +1,5 @@
-import { keys } from "../../../env";
-const API_URL = keys.api_url;
+import { api } from "../../../api_front/env.front";
+const API_URL = api.api_url;
 const LOGIN_URL = `${API_URL}api/auth/login`;
 const REGISTER_URL = `${API_URL}api/auth/registration`;
 const ORDERS_URL = `${API_URL}api/order/`;
