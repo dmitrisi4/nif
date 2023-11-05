@@ -1,3 +1,3 @@
 module.exports.api = {
-	api_url: 'http://13.53.206.241:4000/'
+	api_url: 'http://51.20.144.147:4000/'
 }

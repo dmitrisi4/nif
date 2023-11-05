@@ -1,7 +1,7 @@
 module.exports.dbConfig = {
   HOST: "127.0.0.1",
-  USER: "root",
-  PASSWORD: "Gibon4ik#@",
+  USER: "server",
+  PASSWORD: "@haslo",
   DB: "nif_db",
   dialect: "mysql",
 };
